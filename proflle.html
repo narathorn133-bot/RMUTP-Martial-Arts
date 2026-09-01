@@ -1,0 +1,379 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Member Profile | RMUTP MARTIAL ARTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton:wght@100..900&amp;family=Hanken+Grotesk:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #D4AF37 0%, #F2CA50 50%, #B8860B 100%);
+        }
+        .belt-progress {
+            background: linear-gradient(90deg, #D4AF37 var(--progress), #1A1A1A var(--progress));
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #131313;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4AF37;
+            border-radius: 4px;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#474746",
+                        "surface-container-highest": "#353535",
+                        "on-primary-fixed": "#241a00",
+                        "secondary": "#c6c6c7",
+                        "tertiary-fixed": "#e5e2e1",
+                        "on-background": "#e2e2e2",
+                        "tertiary-container": "#b4b2b2",
+                        "error-container": "#93000a",
+                        "on-tertiary": "#313030",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed": "#e2e2e2",
+                        "surface-variant": "#353535",
+                        "on-secondary-container": "#b4b5b5",
+                        "surface-dim": "#131313",
+                        "surface": "#131313",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "primary": "#f2ca50",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "surface-container": "#1f1f1f",
+                        "surface-container-high": "#2a2a2a",
+                        "secondary-container": "#454747",
+                        "primary-fixed": "#ffe088",
+                        "on-secondary": "#2f3131",
+                        "on-surface-variant": "#d0c5af",
+                        "surface-container-low": "#1b1b1b",
+                        "error": "#ffb4ab",
+                        "outline": "#99907c",
+                        "inverse-surface": "#e2e2e2",
+                        "outline-variant": "#4d4635",
+                        "on-primary": "#3c2f00",
+                        "background": "#131313",
+                        "tertiary": "#d0cdcd",
+                        "on-primary-container": "#554300",
+                        "surface-tint": "#e9c349",
+                        "surface-container-lowest": "#0e0e0e",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "on-secondary-fixed-variant": "#454747",
+                        "on-error": "#690005",
+                        "inverse-primary": "#735c00",
+                        "primary-container": "#d4af37",
+                        "on-primary-fixed-variant": "#574500",
+                        "on-tertiary-container": "#454544",
+                        "surface-bright": "#393939",
+                        "primary-fixed-dim": "#e9c349",
+                        "on-surface": "#e2e2e2",
+                        "inverse-on-surface": "#303030"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-desktop": "80px",
+                        "base": "8px",
+                        "gutter": "24px",
+                        "section-gap-desktop": "120px",
+                        "max-width": "1280px",
+                        "margin-mobile": "20px",
+                        "section-gap-mobile": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Anton"],
+                        "headline-md": ["Anton"],
+                        "display-lg": ["Anton"],
+                        "body-md": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Anton"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                        "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style id="custom-cursor" type="text/css">body button, body [type='button'], body input[type='reset'], body input[type='submit'], body [role="button"], ::-webkit-search-cancel-button, ::-webkit-search-decoration, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, [role^=button], .cc_pointer, [type="search"]::-webkit-search-cancel-button, a, select, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img,  ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon, body .custom-cursor-on-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAA/hJREFUSEu1lXtM1WUYxz+/3zmcA4FcJ3hJwLjY2ojacDYqOCBWg7SkRNiMhsIfGIvIGUZm2uZWbDFJQnIQhEqAA1kiNcQdZoVdDIEJRCkgSlyUgyLCuXDOrwEJonLOscv77/t9vp89l/d5BcycnyOlGNGWbFHAQxIZNY3yUZcDH8ccFYzm4u6+E+YT//S8FOXmSfWiVLDzAd0A9B6Eqw2kBdcL+/4bSIRU7f0GUe4vz9rpOqE5iWMyezYFHRfGrAXNm8mPqyW1XwYq1/BZK30vNG2mxsmW2Ee/Fm7+r5AxPRvD6oXRfw1pCJXU/jtRuUXclUkitaKM5KCl1f3CwbVWlWzecvXtSFI7x25V2QY+MUPRXoHmBLRGPTeC3fIN2DuWcjjmHQFBMpfVvBCpCDWhFSq8o2fix3vgUi747wFRr4N938OFYVDYIEmGm1cFbYpH/mvFVo/wFCSkUsXy9XMgPQfAdyfI7IGLQ1DWDCnBGPtHSL9QYfxkUctbmCY6UMibCcwbnAyeykQqYAUC0cjQYEexEMO4VEg9oZWh90Bywff9vyHdw/BVE2wLAYWMbM1pvuj/Dl+lu7ZS0/gLgjKJldkdglTMKuSOP+AdKzDSJdF38jwerGKQbwipDDML6dJAWROkhYBSTsG1MzTfukSWZwz518+Q/MeXOciEtwWp5KEWnikOYNkr02Vpz4LG9DoMEx6EVgaYz0QDpc2Q9uwMpGWsh2zPjbQZBniuff+pXnQvCVK5i4HIFjn2D8/2qy0Tfk2H4KPg8+rcxueA3y6QOQCTmdwul1JO/rWGqUz2e8XRpu8n6vfc2m5Td7QglSiqCcqMwi917lB8uwYefw+WqOaM8J8l4P0miLbAlRtQ3Q6bV071pExzlk7dIO8ujqRV38+LM5ACluDi08bqGicc/a19xBZ1k5C1HXm1XVJn9PR05ZOIV9TnhFeJiHKLBtYIhoY1lFaVnxwfGl0/DVEjp4sKAravIyjTGg/Lmu4R2FN3giFFzMyLlwpYgFK8zFOHnfCJs2xiSdE0gGF3zac2Ty7fNmetSIcIROneyJo6EecASzbz309ussKzaE+cj7erTDh0z+6SiogfdX+6gPBjcgflwn8EMk6YMCRXXRbHx19QHtnUdt8FGV8XltHoEbK3fsV23Gwml9SDnbxWiZzqgeOtOxavm9ld97U4l7rXT+Gc8dtjuxARH4iyoBDTqKSNYIud2jxk8rYxtTxtqWpD1p0fvQXcB+fgw0ZjPYnysNvSef+TKcHphIW+rl4dRzy3uiyTme+PIMDFEdhwCmPfxPAjvO7aYx2kdbdC1hVc5HA9PE4mySYs1cwA8lt6XYppi+1nd2r/Av84lFJqoq0wAAAAAElFTkSuQmCC") 9 0, pointer !important;} html,body,body select,body .custom-cursor-default-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAxFJREFUSEu10mtIU2Ecx/Hfc9w8eanQUEjCelF0wcKEsgsRQkQp3ZmBtkwNKyoKSyzphUVTHNnFyFqBXZAKtcjAlV3sRZbFZCqVWqaYprN53aZz81yeOLOCKHXT+X97nvP9nOfPIYk5j17kRbz0oJxXLMLU7ZiEITXbKC3KLkWGSfteID67EZr5xd0OqVJQbtE1yK4zb3C44U4zZAEKhKkq3QkRvYJyIRrI5H5AUY8eikZNBzB1M5Zn69wF/YVI0Qemauxpyu/o52zbEX6lwh3QP4gULe7/BGVDXp+FCElYeqlwotB/ESmqt7YivC7LwjPMUYRdzpsINCIiRRtsXVhRr+bkFrr7QJlvQXp6ujgebFRECtYMtmMg9zVCq8X9PvkxmklBHFHDAISsV1QwmNVsQewJV6Exb/I7SIcEiGlPRaG9L7uY9zwZXRgtOIs5jUhBOsiBXHgHa11bRnv39DPznkTanYFcQhyQ2Q6SV42ht19vmQI8DwfmRvePBbmEUAn5BSG3AqTGcMPjfkzSxBBBhFDyGaSmTaR9doH0WCmsHCU8T8HKeU4uP8veUWSNCzEOAv4sIGMAvGkBd6X8wxBBCifzNYq+tOvxsi2d8fHE5lgfQMjwBUecf9b1ugM4VAGUrAdm+QAw2yFmlOFHK50TdDfq21hf/b/nfyGlLUDUM/QIHOpV4ViZFgbieKmoFkPa2gL2pmLnuJHFGshudgJJZeiCF7bChl5vFuUDcfCTGNFkA5OiRWNgc/Bc1bFWVyGi30Hpw2Qgsx6VArALieSzI3KVPr+4CuuOLBlOisX3wbcdyWcPGpUuIwmp9N7t+fAS7DiIA6TtT+AqXR208F3597XSzjwh8ibQu36GXmZGRICya/hDnJzhnY8wbNXxD5rZipA4v+WOE4IuFcJH9Sk2ASon+45joyLQJUdumLmgpCRoLxjpR+2sAKddo7MR743T4izdzkKjI6/SpwT4c1WZwVsWeFoaoKw6B/tAk5qdajpNNsHqHoSCoDI53lvGnPfgeY258mIOGBjJPnDOAtK5n6qgeykLdBAFAAAAAElFTkSuQmCC") 0 0, auto !important;}</style></head>
+<body class="bg-background text-on-surface font-body-md overflow-x-hidden selection:bg-primary selection:text-on-primary">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant"><div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto"><div class="flex items-center gap-4"><img alt="RMUTP Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCUrxsj_cK1dfeqPmyKn6teJzGoq7UbXFbEUnLwWArt4M0Wynl7-AF8e3Hv9nMTf8yjwC1RZmrIUW02sSxNIn3NaOV3s8wtBolqTJALe9eaOxmxpC5V7S-1Jy940eikW08eEo8TeVocwV46ltUr0UsW79sUu_mDhqxgzYZAMp9xASc49ympCnNhy6aqsZL-4fHW1dKEiyLsw9xa0cWOw9qUxx1QCn2a6Gat3sPbZAJdHYYkQyNdDhK_FqV1xie32AnFvQ"><div class="flex flex-col leading-none"><span class="font-headline-md text-lg text-on-surface uppercase tracking-tighter">ชมรมกีฬาต่อสู้</span><span class="font-display-lg text-2xl text-primary uppercase tracking-widest">RMUTP</span></div></div><div class="hidden lg:flex items-center gap-8"><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="index.html">Home</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="club-info.html">Club Info</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="combat-sports.html">Combat Sports</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="news.html">News</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="activities.html">Activities</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer active:scale-95" href="competitions.html">Competitions</a></div><div class="flex items-center gap-4"><button class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 transition-transform duration-200 hover:scale-105 active:scale-95">Profile</button><span class="material-symbols-outlined text-primary cursor-pointer" data-icon="account_circle">account_circle</span></div></div></nav>
+<main class="pt-32 pb-section-gap-desktop px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<!-- Dashboard Header -->
+<header class="mb-12">
+<h1 class="font-display-lg text-headline-lg md:text-display-lg uppercase text-primary leading-none">MEMBER DASHBOARD</h1>
+<p class="text-on-surface-variant mt-2 max-w-2xl">Manage your progress, track competition history, and refine your technique within the elite RMUTP dojo ecosystem.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Sidebar: Profile Card & Quick Stats -->
+<aside class="lg:col-span-4 space-y-6">
+<!-- Profile Card -->
+<div class="bg-surface-container rounded-none border-l-4 border-primary p-8 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10">
+<span class="material-symbols-outlined text-8xl" data-icon="shield">shield</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-32 h-32 bg-surface-container-highest rounded-none border-2 border-primary-container p-1 mb-6 relative group-hover:scale-105 transition-transform duration-500">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="A striking professional portrait of a martial artist in a black gi, high-contrast lighting emphasizing muscle definition and focused expression, set against a dark minimalist studio background with subtle golden rim lighting. The aesthetic is prestigious and athletic, reflecting high performance and discipline." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4QCd-hApJ0cOr8N3jLJIWQGYd30PJIErVvicrQiyKDfmLnPfRE0u9mNbZDSfisEruEl4I98QXDf03NDh-nPqMUrV5Zo-zd8a5yQuqykJlT_cpTKzUBoCRfLnVhcg8gpV0JX-VOl7lROSUvLHBe6AkDl-5FEAHpWE-Ze2TO2dV4JaJaKJwo_LpDlqSAemeDV0XOIacrt3DS4KQdGPo1OboIiZ2aZ6ddRu-Epzn_Fo_2re2bcRpfp6xPWxJaPO485lRNfUzZg_N67w">
+<div class="absolute -bottom-2 -right-2 bg-primary text-on-primary text-[10px] font-bold px-2 py-1 uppercase">ELITE</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-white mb-1 uppercase">THANAKORN W.</h2>
+<p class="text-primary font-bold tracking-widest text-sm mb-4">MEMBER ID: #RMUTP-7721</p>
+<div class="flex gap-2 mb-6">
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 text-xs font-bold uppercase tracking-tighter">Muay Thai</span>
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 text-xs font-bold uppercase tracking-tighter">BJJ</span>
+</div>
+<div class="w-full space-y-4 pt-6 border-t border-outline-variant/30">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant text-xs uppercase tracking-widest">Current Rank</span>
+<span class="text-primary font-bold">PURPLE BELT II</span>
+</div>
+<div class="w-full bg-surface-container-highest h-2 rounded-none overflow-hidden">
+<div class="h-full gold-gradient" style="width: 75%; transition: width 1.5s cubic-bezier(0.65, 0, 0.35, 1);"></div>
+</div>
+<p class="text-[10px] text-on-surface-variant text-right uppercase">75% to Brown Belt</p>
+</div>
+</div>
+</div>
+<!-- Training Summary Bento -->
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-6 border border-outline-variant hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform" data-icon="timer">timer</span>
+<div class="text-2xl font-headline-md text-white">482</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest">Training Hours</div>
+</div>
+<div class="bg-surface-container p-6 border border-outline-variant hover:border-primary transition-colors group">
+<span class="material-symbols-outlined text-primary mb-2 group-hover:scale-110 transition-transform" data-icon="military_tech">military_tech</span>
+<div class="text-2xl font-headline-md text-white">12-2-0</div>
+<div class="text-[10px] text-on-surface-variant uppercase tracking-widest">W-L-D Record</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-headline-md text-lg uppercase tracking-widest hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                    BOOK PRIVATE SESSION
+                </button>
+</aside>
+<!-- Main Content: Bento Grid Stats -->
+<div class="lg:col-span-8 space-y-gutter">
+<!-- Top Row: Competition Focus -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+<!-- Competition Record Detail -->
+<div class="bg-surface-container-high p-8 border border-outline-variant flex flex-col justify-between group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<h3 class="font-headline-md text-headline-md uppercase text-white leading-none">RECENT<br>VICTORY</h3>
+<span class="bg-primary text-on-primary px-2 py-1 text-[10px] font-bold">GOLD MEDAL</span>
+</div>
+<p class="text-on-surface-variant text-sm mb-4">RMUTP Regional Open 2024</p>
+<div class="flex items-center gap-4 text-xs font-bold text-primary tracking-widest uppercase">
+<span class="">WIN BY SUBMISSION</span>
+<span class="h-1 w-1 bg-primary rounded-full"></span>
+<span class="">3:42 ROUND 2</span>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/30 flex justify-between items-center">
+<span class="text-xs text-on-surface-variant uppercase">Next Fight: Aug 15</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform cursor-pointer" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+<!-- Achievement Progress -->
+<div class="bg-surface-container-low p-8 border border-outline-variant relative overflow-hidden">
+<div class="absolute -right-4 -bottom-4 opacity-5 rotate-12">
+<span class="material-symbols-outlined text-[160px]" data-icon="trophy">trophy</span>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-6">ACHIEVEMENTS</h3>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-primary/20 border border-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="workspace_premium" data-weight="fill" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[10px] uppercase font-bold text-on-surface-variant mb-1">
+<span class="">Master of Guard</span>
+<span class="">8/10</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%"></div>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-surface-container border border-outline-variant flex items-center justify-center opacity-50">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+</div>
+<div class="flex-1">
+<div class="flex justify-between text-[10px] uppercase font-bold text-on-surface-variant mb-1 opacity-50">
+<span class="">Iron Shin Striker</span>
+<span class="">Locked</span>
+</div>
+<div class="h-1 bg-surface-container-highest w-full overflow-hidden">
+<div class="h-full bg-on-surface-variant" style="width: 0%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Row: Classes & Schedule -->
+<div class="bg-surface-container p-8 border border-outline-variant">
+<div class="flex justify-between items-center mb-8">
+<h3 class="font-headline-md text-headline-md uppercase text-white">UPCOMING CLASSES</h3>
+<a class="text-xs font-bold text-primary uppercase border-b border-primary tracking-widest pb-1 hover:brightness-125 transition-all" href="#">Full Schedule</a>
+</div>
+<div class="space-y-4">
+<!-- Class Item -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-surface-container-high border-l-2 border-primary group hover:bg-surface-container-highest transition-colors cursor-pointer">
+<div class="flex items-center gap-6">
+<div class="text-center min-w-[60px]">
+<div class="text-xl font-headline-md text-primary">24</div>
+<div class="text-[10px] text-on-surface-variant uppercase">JULY</div>
+</div>
+<div>
+<h4 class="font-title-lg text-white group-hover:text-primary transition-colors">Advanced Muay Thai Clinch</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 18:00 - 19:30 
+                                        <span class="mx-2">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span> Coach Somchai
+                                    </p>
+</div>
+</div>
+<div class="mt-4 md:mt-0">
+<span class="bg-primary/20 text-primary border border-primary/40 px-4 py-2 text-xs font-bold uppercase tracking-widest">Enrolled</span>
+</div>
+</div>
+<!-- Class Item -->
+<div class="flex flex-col md:flex-row md:items-center justify-between p-4 bg-surface-container-low border-l-2 border-outline-variant group hover:bg-surface-container-high transition-colors cursor-pointer">
+<div class="flex items-center gap-6">
+<div class="text-center min-w-[60px]">
+<div class="text-xl font-headline-md text-on-surface-variant">26</div>
+<div class="text-[10px] text-on-surface-variant uppercase">JULY</div>
+</div>
+<div>
+<h4 class="font-title-lg text-white group-hover:text-primary transition-colors">No-Gi BJJ Rolling Session</h4>
+<p class="text-sm text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> 19:00 - 21:00 
+                                        <span class="mx-2">|</span>
+<span class="material-symbols-outlined text-sm" data-icon="person">person</span> Coach Arun
+                                    </p>
+</div>
+</div>
+<div class="mt-4 md:mt-0">
+<button class="border border-primary text-primary px-4 py-2 text-xs font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">Join Class</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Training Heatmap Placeholder -->
+<div class="bg-surface-container-lowest p-8 border border-outline-variant h-64 flex flex-col justify-between overflow-hidden relative">
+<div class="z-10">
+<h3 class="font-headline-md text-headline-md uppercase text-white mb-2">TRAINING INTENSITY</h3>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest">Activity tracking over the last 6 months</p>
+</div>
+<!-- Mock Visual Graph -->
+<div class="flex items-end gap-1 h-32 mt-4">
+<div class="flex-1 bg-primary/20 h-[30%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/40 h-[60%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/10 h-[20%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/60 h-[80%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/80 h-[90%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/30 h-[40%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/50 h-[70%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/90 h-[100%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/20 h-[25%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/40 h-[55%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/70 h-[85%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/100 h-[100%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/30 h-[35%] hover:bg-primary transition-colors"></div>
+<div class="flex-1 bg-primary/60 h-[75%] hover:bg-primary transition-colors"></div>
+</div>
+<div class="absolute top-0 right-0 p-8">
+<span class="material-symbols-outlined text-primary/20 text-6xl" data-icon="monitoring">monitoring</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap-desktop border-t-2 border-primary mt-24">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary mb-6 uppercase">RMUTP MARTIAL ARTS</h3>
+<p class="text-on-surface-variant font-body-md text-body-md max-w-xs">
+                    Building the next generation of champions through disciplined training and traditional values.
+                </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-title-lg text-white uppercase tracking-widest mb-2">QUICK LINKS</h4>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Terms of Service</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Contact Coach</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Dojo Rules</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md font-bold" href="#">Join the Elite</a>
+</div>
+<div class="flex flex-col gap-6">
+<h4 class="font-title-lg text-white uppercase tracking-widest mb-2">NEWSLETTER</h4>
+<div class="flex border-b border-primary">
+<input class="bg-transparent border-none focus:ring-0 text-on-surface w-full py-2 px-0 text-sm" placeholder="Email Address" type="email">
+<button class="material-symbols-outlined text-primary" data-icon="send">send</button>
+</div>
+<p class="text-xs text-on-surface-variant uppercase tracking-widest mt-auto">
+                    © 2024 RMUTP Martial Arts Club. All Rights Reserved.
+                </p>
+</div>
+</div>
+</footer>
+<!-- Micro-interaction Scripts -->
+<script>
+        // Simple scale and highlight on dashboard interactions
+        document.querySelectorAll('.bg-surface-container').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.borderColor = 'var(--primary)';
+            });
+            card.addEventListener('mouseleave', () => {
+                if (!card.classList.contains('border-l-4')) {
+                    card.style.borderColor = 'rgba(153, 144, 124, 0.3)'; // outline-variant
+                }
+            });
+        });
+
+        // Dynamic belt progress animation on load
+        window.addEventListener('DOMContentLoaded', () => {
+            const bars = document.querySelectorAll('.gold-gradient');
+            bars.forEach(bar => {
+                const targetWidth = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.transition = 'width 1.5s cubic-bezier(0.65, 0, 0.35, 1)';
+                    bar.style.width = targetWidth;
+                }, 200);
+            });
+        });
+    </script>
+
+
+</body></html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Combat Sports | RMUTP Martial Arts</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to right, #f2ca50, #ffe088, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text; 
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-card { 
+            backdrop-filter: blur(12px);
+            background: rgba(26, 26, 26, 0.8);
+        }
+        .hover-gold-border:hover {
+            border-color: #d4af37 !important;
+            transform: scale(1.02);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+    </style>
+
+    <!-- Insert Theme Config -->
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "on-tertiary-fixed-variant": "#474746",
+              "surface-container-highest": "#353535",
+              "on-primary-fixed": "#241a00",
+              "secondary": "#c6c6c7",
+              "tertiary-fixed": "#e5e2e1",
+              "on-background": "#e2e2e2",
+              "tertiary-container": "#b4b2b2",
+              "error-container": "#93000a",
+              "on-tertiary": "#313030",
+              "on-error-container": "#ffdad6",
+              "tertiary-fixed-dim": "#c8c6c5",
+              "secondary-fixed": "#e2e2e2",
+              "surface-variant": "#353535",
+              "on-secondary-container": "#b4b5b5",
+              "surface-dim": "#131313",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#c6c6c7",
+              "primary": "#f2ca50",
+              "on-tertiary-fixed": "#1c1b1b",
+              "surface-container": "#1f1f1f",
+              "surface-container-high": "#2a2a2a",
+              "secondary-container": "#454747",
+              "primary-fixed": "#ffe088",
+              "on-secondary": "#2f3131",
+              "on-surface-variant": "#d0c5af",
+              "surface-container-low": "#1b1b1b",
+              "error": "#ffb4ab",
+              "outline": "#99907c",
+              "inverse-surface": "#e2e2e2",
+              "outline-variant": "#4d4635",
+              "on-primary": "#3c2f00",
+              "background": "#131313",
+              "tertiary": "#d0cdcd",
+              "on-primary-container": "#554300",
+              "surface-tint": "#e9c349",
+              "surface-container-lowest": "#0e0e0e",
+              "on-secondary-fixed": "#1a1c1c",
+              "on-secondary-fixed-variant": "#454747",
+              "on-error": "#690005",
+              "inverse-primary": "#735c00",
+              "primary-container": "#d4af37",
+              "on-primary-fixed-variant": "#574500",
+              "on-tertiary-container": "#454544",
+              "surface-bright": "#393939",
+              "primary-fixed-dim": "#e9c349",
+              "on-surface": "#e2e2e2",
+              "inverse-on-surface": "#303030"
+            },
+            "borderRadius": {
+              "DEFAULT": "0.25rem",
+              "lg": "0.5rem",
+              "xl": "0.75rem",
+              "full": "9999px"
+            },
+            "spacing": {
+              "margin-desktop": "80px",
+              "base": "8px",
+              "gutter": "24px",
+              "section-gap-desktop": "120px",
+              "max-width": "1280px",
+              "margin-mobile": "20px",
+              "section-gap-mobile": "64px"
+            },
+            "fontFamily": {
+              "anton": ["Anton", "sans-serif"],
+              "hanken": ["Hanken Grotesk", "sans-serif"]
+            },
+            "fontSize": {
+              "headline-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+              "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+              "display-lg": ["80px", { "lineHeight": "88px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+              "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+              "title-lg": ["20px", { "lineHeight": "28px", "fontWeight": "700" }],
+              "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+              "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+              "headline-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }]
+            }
+          }
+        }
+      }
+    </script>
+</head>
+
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant">
+    <div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 max-w-max-width mx-auto">
+        <div class="flex items-center gap-4">
+            <img alt="RMUTP Martial Arts Club Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRo1h-cEzAcwDXGxVzElc7TmIxeg3gmhF__BHj9k4BDgXM93cLD6JhdcPWfRh40lm7vYZwlTLOqDc6VOzC6XRVQLoo-kyCCKeGHQYoOgargcsl5Fxc13hdCsDXGXKcuWo-IW7oi6it56FJPrhUt8ES7aHg1vlYMTExIoPGLR9Kw4bFXh6yB-JjmqtEACZ88gRPrUjPQ-zBn7yXtweLPg_ZM5niopvkCcqPGST1qRKyHBKA4F11yLnIbxBf1CR2xY5nNg">
+            <div class="flex flex-col leading-none">
+                <span class="font-headline-md text-headline-md text-on-surface tracking-tighter">ชมรมกีฬาต่อสู้</span>
+                <span class="font-headline-md text-headline-md text-primary tracking-tighter">RMUTP</span>
+            </div>
+        </div>
+        <div class="hidden lg:flex items-center gap-8">
+            <a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="index.html">Home</a>
+            <a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="club-info.html">Club Info</a>
+            <a class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 cursor-pointer" href="combat-sports.html">Combat Sports</a>
+            <a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="news.html">News</a>
+            <a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="activities.html">Activities</a>
+            <a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="competitions.html">Competitions</a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button class="bg-primary text-on-primary px-6 py-2 rounded-none font-bold uppercase tracking-wider hover:bg-primary-fixed transition-all active:scale-95">Profile</button>
+            <button class="lg:hidden text-primary"><span class="material-symbols-outlined">menu</span></button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<header class="relative min-h-[70vh] flex flex-col justify-end pb-section-gap-mobile md:pb-section-gap-desktop pt-32 overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+    <div class="relative z-10 px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto w-full">
+        <span class="text-primary font-bold tracking-[0.4em] uppercase text-label-md mb-4 block">Elite Disciplines</span>
+        <h1 class="font-display-lg text-headline-lg-mobile md:text-display-lg uppercase leading-none mb-6">
+            Master the <span class="gold-gradient-text">Art of Combat</span>
+        </h1>
+        <p class="max-w-2xl text-on-surface-variant font-body-lg text-body-lg mb-8">
+            From the explosive strikes of Muay Thai to the technical precision of BJJ, our club offers world-class training across multiple disciplines. Join a legacy of champions.
+        </p>
+    </div>
+</header>
+
+<!-- Combat Disciplines Bento/Card Grid -->
+<main class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto mb-section-gap-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-gutter">
+        <!-- Muay Thai Card -->
+        <article class="glass-card group relative overflow-hidden border border-outline-variant hover-gold-border transition-all duration-500 flex flex-col">
+            <div class="relative h-96 overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdxjPCWTCvBGfw2z2ipF9xvi-fgHy6nM0KyBZdqKwCVg0N6IKwjvtZxXtL06pfIZQN_7_qiGo7mX78nrKQ9CJReKxL_7WT61NG1Vpw8FWPwqWRE1gPakMY7eMERlhwA3IxffCywUR0Wfw2y1dsyJflTsGSEfUB9QXhAE1xf8NNI9Vw3C57T4GLbsUtfpZkG2F0L_NfxcqxV8SS1zgF6auyw_XTnmVxa_4iRT-0uojXFICuaMrI2ekmssl9Kj6nCSk-VCo9hjk_j9w')"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+                <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-bold text-label-md tracking-tighter uppercase">Art of 8 Limbs</div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="font-headline-md text-headline-md uppercase mb-4 text-primary">มวยไทย (Muay Thai)</h3>
+                <p class="text-on-surface-variant text-body-md mb-6 flex-grow">
+                    Thailand's national treasure. Master the use of fists, elbows, knees, and shins in this high-intensity striking discipline focused on power, clinch work, and conditioning.
+                </p>
+                <div class="border-t border-outline-variant pt-6 mb-8">
+                    <h4 class="text-label-md uppercase tracking-widest text-primary mb-3">Schedule Highlights</h4>
+                    <ul class="space-y-2 text-on-surface font-body-md">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+                            Mon / Wed / Fri: 17:00 - 19:00
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]">bolt</span>
+                            Advanced Clinch: Sat 10:00
+                        </li>
+                    </ul>
+                </div>
+                <button class="w-full bg-transparent border-2 border-primary text-primary py-4 font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all duration-300">Join Training</button>
+            </div>
+        </article>
+
+        <!-- Boxing Card -->
+        <article class="glass-card group relative overflow-hidden border border-outline-variant hover-gold-border transition-all duration-500 flex flex-col">
+            <div class="relative h-96 overflow-hidden">
+                <div class="w-full h-full bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style="background-image: url('https://images.unsplash.com/photo-1509563268479-0f004cf3f58b?q=80&amp;w=2070&amp;auto=format&amp;fit=crop')"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface-container via-transparent to-transparent"></div>
+                <div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-bold text-label-md tracking-tighter uppercase">The Sweet Science</div>
+            </div>
+            <div class="p-8 flex flex-col flex-grow">
+                <h3 class="font-headline-md text-headline-md uppercase mb-4 text-primary">มวยสากล (Boxing)</h3>
+                <p class="text-on-surface-variant text-body-md mb-6 flex-grow">
+                    Master the art of pugilism. Focus on footwork, head movement, and precise punching combinations. Develop elite-level cardiovascular endurance and defensive mastery.
+                </p>
+                <div class="border-t border-outline-variant pt-6 mb-8">
+                    <h4 class="text-label-md uppercase tracking-widest text-primary mb-3">Schedule Highlights</h4>
+                    <ul class="space-y-2 text-on-surface font-body-md">
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]">calendar_today</span>
+                            Tue / Thu: 17:00 - 19:00
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary text-[18px]">fitness_center</span>
+                            Heavy Bag Drills: Sat 11:00
+                        </li>
+                    </ul>
+                </div>
+                <button class="w-full bg-primary text-on-primary py-4 font-bold uppercase tracking-widest hover:bg-primary-fixed transition-all duration-300 border-2 border-primary">Join Training</button>
+            </div>
+        </article>
+    </div>
+</main>
+
+<!-- Rank Progress / Achievement Section -->
+<section class="bg-surface-container-low py-section-gap-desktop relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-1/3 h-full bg-primary/5 -skew-x-12 transform translate-x-20"></div>
+    <div class="px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-gutter items-center relative z-10">
+        <div>
+            <h2 class="font-headline-lg text-headline-lg uppercase mb-6 leading-tight">Master the <span class="text-primary">Belt System</span></h2>
+            <p class="text-on-surface-variant text-body-lg mb-8">Our curriculum follows international standards. Track your journey from White belt to elite Master ranks with our specialized achievement tracking UI.</p>
+            <div class="space-y-6">
+                <div class="space-y-2">
+                    <div class="flex justify-between text-label-md font-bold uppercase tracking-widest">
+                        <span>BJJ Blue Belt Progress</span>
+                        <span class="text-primary">65%</span>
+                    </div>
+                    <div class="h-2 bg-surface-container-highest border border-outline-variant">
+                        <div class="h-full bg-gradient-to-r from-primary to-primary-fixed" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="space-y-2 opacity-50">
+                    <div class="flex justify-between text-label-md font-bold uppercase tracking-widest">
+                        <span>Muay Thai Pro-Am Grade</span>
+                        <span>Level 2</span>
+                    </div>
+                    <div class="h-2 bg-surface-container-highest border border-outline-variant">
+                        <div class="h-full bg-secondary" style="width: 30%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center md:justify-end">
+            <div class="relative w-full max-w-md aspect-square border-2 border-primary/20 p-8 flex items-center justify-center">
+                <div class="absolute inset-0 border border-primary/10 rotate-45 transform"></div>
+                <span class="material-symbols-outlined text-[160px] text-primary" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+                <div class="absolute -bottom-4 -right-4 bg-primary text-on-primary p-6 font-headline-md text-headline-md uppercase tracking-tighter">Elite Club</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t-2 border-primary w-full py-section-gap-desktop">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-mobile md:px-margin-desktop max-w-max-width mx-auto">
+        <div>
+            <h2 class="font-headline-md text-headline-md text-primary mb-6">RMUTP MARTIAL ARTS</h2>
+            <p class="text-on-surface-variant font-body-md mb-6">
+                The premier destination for martial arts excellence in RMUTP. We train body, mind, and spirit under the guidance of elite coaches.
+            </p>
+            <div class="flex gap-4">
+                <a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+                    <span class="material-symbols-outlined">share</span>
+                </a>
+                <a class="w-10 h-10 border border-outline-variant flex items-center justify-center hover:border-primary transition-colors text-on-surface-variant hover:text-primary" href="#">
+                    <span class="material-symbols-outlined">location_on</span>
+                </a>
+            </div>
+        </div>
+        <div class="flex flex-col gap-4">
+            <h3 class="font-bold uppercase tracking-[0.2em] text-primary mb-2">The Dojo</h3>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Privacy Policy</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Terms of Service</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Contact Coach</a>
+            <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md" href="#">Dojo Rules</a>
+            <a class="text-primary font-bold transition-colors font-body-md" href="#">Join the Elite</a>
+        </div>
+        <div class="flex flex-col justify-between">
+            <div>
+                <h3 class="font-bold uppercase tracking-[0.2em] text-primary mb-4">Newsletter</h3>
+                <div class="flex">
+                    <input class="bg-surface border-b border-white flex-grow px-0 py-2 focus:outline-none focus:border-primary text-on-surface transition-colors placeholder:text-on-surface-variant/40" placeholder="Fighter's Email" type="email">
+                    <button class="ml-4 text-primary hover:translate-x-1 transition-transform">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <p class="text-on-surface-variant font-body-md mt-12 md:mt-0 opacity-60">
+                © 2024 RMUTP Martial Arts Club. All Rights Reserved.
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // Micro-interaction for cards
+    document.querySelectorAll('.glass-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--mouse-x', `${x}px`);
+            card.style.setProperty('--mouse-y', `${y}px`);
+        });
+    });
+</script>
+
+</body>
+</html>

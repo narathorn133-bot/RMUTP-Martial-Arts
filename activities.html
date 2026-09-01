@@ -1,0 +1,340 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Activities | RMUTP Martial Arts Club</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48;
+        }
+        .glass-card {
+            background: rgba(26, 26, 26, 0.8);
+            backdrop-filter: blur(12px);
+        }
+        .gold-glow:hover {
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0e0e0e;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d4af37;
+            border-radius: 4px;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed-variant": "#474746",
+                    "surface-container-highest": "#353535",
+                    "on-primary-fixed": "#241a00",
+                    "secondary": "#c6c6c7",
+                    "tertiary-fixed": "#e5e2e1",
+                    "on-background": "#e2e2e2",
+                    "tertiary-container": "#b4b2b2",
+                    "error-container": "#93000a",
+                    "on-tertiary": "#313030",
+                    "on-error-container": "#ffdad6",
+                    "tertiary-fixed-dim": "#c8c6c5",
+                    "secondary-fixed": "#e2e2e2",
+                    "surface-variant": "#353535",
+                    "on-secondary-container": "#b4b5b5",
+                    "surface-dim": "#131313",
+                    "surface": "#131313",
+                    "secondary-fixed-dim": "#c6c6c7",
+                    "primary": "#f2ca50",
+                    "on-tertiary-fixed": "#1c1b1b",
+                    "surface-container": "#1f1f1f",
+                    "surface-container-high": "#2a2a2a",
+                    "secondary-container": "#454747",
+                    "primary-fixed": "#ffe088",
+                    "on-secondary": "#2f3131",
+                    "on-surface-variant": "#d0c5af",
+                    "surface-container-low": "#1b1b1b",
+                    "error": "#ffb4ab",
+                    "outline": "#99907c",
+                    "inverse-surface": "#e2e2e2",
+                    "outline-variant": "#4d4635",
+                    "on-primary": "#3c2f00",
+                    "background": "#131313",
+                    "tertiary": "#d0cdcd",
+                    "on-primary-container": "#554300",
+                    "surface-tint": "#e9c349",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-secondary-fixed": "#1a1c1c",
+                    "on-secondary-fixed-variant": "#454747",
+                    "on-error": "#690005",
+                    "inverse-primary": "#735c00",
+                    "primary-container": "#d4af37",
+                    "on-primary-fixed-variant": "#574500",
+                    "on-tertiary-container": "#454544",
+                    "surface-bright": "#393939",
+                    "primary-fixed-dim": "#e9c349",
+                    "on-surface": "#e2e2e2",
+                    "inverse-on-surface": "#303030"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin-desktop": "80px",
+                    "base": "8px",
+                    "gutter": "24px",
+                    "section-gap-desktop": "120px",
+                    "max-width": "1280px",
+                    "margin-mobile": "20px",
+                    "section-gap-mobile": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Anton"],
+                    "headline-md": ["Anton"],
+                    "display-lg": ["Anton"],
+                    "body-md": ["Hanken Grotesk"],
+                    "title-lg": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-md": ["Hanken Grotesk"],
+                    "headline-lg-mobile": ["Anton"]
+            },
+            "fontSize": {
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
+                    "display-lg": ["80px", {"lineHeight": "88px", "letterSpacing": "0.02em", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "title-lg": ["20px", {"lineHeight": "28px", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style id="custom-cursor" type="text/css">body button, body [type='button'], body input[type='reset'], body input[type='submit'], body [role="button"], ::-webkit-search-cancel-button, ::-webkit-search-decoration, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, [role^=button], .cc_pointer, [type="search"]::-webkit-search-cancel-button, a, select, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img,  ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon, body .custom-cursor-on-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAA/hJREFUSEu1lXtM1WUYxz+/3zmcA4FcJ3hJwLjY2ojacDYqOCBWg7SkRNiMhsIfGIvIGUZm2uZWbDFJQnIQhEqAA1kiNcQdZoVdDIEJRCkgSlyUgyLCuXDOrwEJonLOscv77/t9vp89l/d5BcycnyOlGNGWbFHAQxIZNY3yUZcDH8ccFYzm4u6+E+YT//S8FOXmSfWiVLDzAd0A9B6Eqw2kBdcL+/4bSIRU7f0GUe4vz9rpOqE5iWMyezYFHRfGrAXNm8mPqyW1XwYq1/BZK30vNG2mxsmW2Ee/Fm7+r5AxPRvD6oXRfw1pCJXU/jtRuUXclUkitaKM5KCl1f3CwbVWlWzecvXtSFI7x25V2QY+MUPRXoHmBLRGPTeC3fIN2DuWcjjmHQFBMpfVvBCpCDWhFSq8o2fix3vgUi747wFRr4N938OFYVDYIEmGm1cFbYpH/mvFVo/wFCSkUsXy9XMgPQfAdyfI7IGLQ1DWDCnBGPtHSL9QYfxkUctbmCY6UMibCcwbnAyeykQqYAUC0cjQYEexEMO4VEg9oZWh90Bywff9vyHdw/BVE2wLAYWMbM1pvuj/Dl+lu7ZS0/gLgjKJldkdglTMKuSOP+AdKzDSJdF38jwerGKQbwipDDML6dJAWROkhYBSTsG1MzTfukSWZwz518+Q/MeXOciEtwWp5KEWnikOYNkr02Vpz4LG9DoMEx6EVgaYz0QDpc2Q9uwMpGWsh2zPjbQZBniuff+pXnQvCVK5i4HIFjn2D8/2qy0Tfk2H4KPg8+rcxueA3y6QOQCTmdwul1JO/rWGqUz2e8XRpu8n6vfc2m5Td7QglSiqCcqMwi917lB8uwYefw+WqOaM8J8l4P0miLbAlRtQ3Q6bV071pExzlk7dIO8ujqRV38+LM5ACluDi08bqGicc/a19xBZ1k5C1HXm1XVJn9PR05ZOIV9TnhFeJiHKLBtYIhoY1lFaVnxwfGl0/DVEjp4sKAravIyjTGg/Lmu4R2FN3giFFzMyLlwpYgFK8zFOHnfCJs2xiSdE0gGF3zac2Ty7fNmetSIcIROneyJo6EecASzbz309ussKzaE+cj7erTDh0z+6SiogfdX+6gPBjcgflwn8EMk6YMCRXXRbHx19QHtnUdt8FGV8XltHoEbK3fsV23Gwml9SDnbxWiZzqgeOtOxavm9ld97U4l7rXT+Gc8dtjuxARH4iyoBDTqKSNYIud2jxk8rYxtTxtqWpD1p0fvQXcB+fgw0ZjPYnysNvSef+TKcHphIW+rl4dRzy3uiyTme+PIMDFEdhwCmPfxPAjvO7aYx2kdbdC1hVc5HA9PE4mySYs1cwA8lt6XYppi+1nd2r/Av84lFJqoq0wAAAAAElFTkSuQmCC") 9 0, pointer !important;} html,body,body select,body .custom-cursor-default-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAxFJREFUSEu10mtIU2Ecx/Hfc9w8eanQUEjCelF0wcKEsgsRQkQp3ZmBtkwNKyoKSyzphUVTHNnFyFqBXZAKtcjAlV3sRZbFZCqVWqaYprN53aZz81yeOLOCKHXT+X97nvP9nOfPIYk5j17kRbz0oJxXLMLU7ZiEITXbKC3KLkWGSfteID67EZr5xd0OqVJQbtE1yK4zb3C44U4zZAEKhKkq3QkRvYJyIRrI5H5AUY8eikZNBzB1M5Zn69wF/YVI0Qemauxpyu/o52zbEX6lwh3QP4gULe7/BGVDXp+FCElYeqlwotB/ESmqt7YivC7LwjPMUYRdzpsINCIiRRtsXVhRr+bkFrr7QJlvQXp6ujgebFRECtYMtmMg9zVCq8X9PvkxmklBHFHDAISsV1QwmNVsQewJV6Exb/I7SIcEiGlPRaG9L7uY9zwZXRgtOIs5jUhBOsiBXHgHa11bRnv39DPznkTanYFcQhyQ2Q6SV42ht19vmQI8DwfmRvePBbmEUAn5BSG3AqTGcMPjfkzSxBBBhFDyGaSmTaR9doH0WCmsHCU8T8HKeU4uP8veUWSNCzEOAv4sIGMAvGkBd6X8wxBBCifzNYq+tOvxsi2d8fHE5lgfQMjwBUecf9b1ugM4VAGUrAdm+QAw2yFmlOFHK50TdDfq21hf/b/nfyGlLUDUM/QIHOpV4ViZFgbieKmoFkPa2gL2pmLnuJHFGshudgJJZeiCF7bChl5vFuUDcfCTGNFkA5OiRWNgc/Bc1bFWVyGi30Hpw2Qgsx6VArALieSzI3KVPr+4CuuOLBlOisX3wbcdyWcPGpUuIwmp9N7t+fAS7DiIA6TtT+AqXR208F3597XSzjwh8ibQu36GXmZGRICya/hDnJzhnY8wbNXxD5rZipA4v+WOE4IuFcJH9Sk2ASon+45joyLQJUdumLmgpCRoLxjpR+2sAKddo7MR743T4izdzkKjI6/SpwT4c1WZwVsWeFoaoKw6B/tAk5qdajpNNsHqHoSCoDI53lvGnPfgeY258mIOGBjJPnDOAtK5n6qgeykLdBAFAAAAAElFTkSuQmCC") 0 0, auto !important;}</style></head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant"><div class="flex justify-between items-center px-margin-desktop py-4 max-w-max-width mx-auto"><div class="flex items-center gap-4"><img alt="RMUTP Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9DegY7iMD0tGWzR7vvTMuc0C1CpDAPV1adPZfyswpa8K1OdvkU7JWSRTN1EYJfM6UDZRsTUfdjfFmcHf9DbqGinq4lor0u7yKrfOxJYHtf5bvHrHnhGKLXN7WXwTCAgRG9zPjYMwZhBXee94pH5uC_h8EBti_hopTF1OpkzbCKk0OZW2Id91tgWEDewZVedYjQHdpl3aPXWmVCBBiTQ-uPP2ccvyEpRoOwMYrZaaBeri-9p2l58d7ZhnQyI_bG1OxWkiEbASJsmA"><div class="flex flex-col leading-none"><span class="font-headline-md text-xl text-white uppercase tracking-tighter">ชมรมกีฬาต่อสู้</span><span class="font-headline-md text-2xl text-primary uppercase tracking-tighter">RMUTP</span></div></div><div class="hidden md:flex items-center gap-8"><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="้index.html">Home</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="club-info.html">Club Info</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="combat-sports.html">Combat Sports</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="news.html">News</a><a class="font-body-md text-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1 cursor-pointer" href="activities.html">Activities</a><a class="font-body-md text-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="competitions.html">Competitions</a></div><div class="flex items-center gap-4"><button class="bg-primary text-on-primary px-6 py-2 font-bold uppercase tracking-widest text-label-md hover:scale-105 transition-transform active:scale-95">Profile</button></div></div></nav>
+<main class="pt-24">
+<!-- Hero Section -->
+<section class="relative h-[60vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/60 to-background z-10"></div>
+<div class="w-full h-full grayscale opacity-40 bg-center bg-cover" data-alt="A cinematic, low-angle wide shot of a high-end martial arts dojo with dark wood floors and black walls. Atmospheric smoke catches sharp golden spotlights focusing on the center of the room where elite athletes train intensely. The lighting is dramatic and high-contrast, emphasizing the discipline and power of the RMUTP Martial Arts Club." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBlnB-bkbHccU72887F2gOO1WPaUt4tB7Bm2wYB4YKqC96zX1qpr2UCGZY72QE2u_SrsxQbhCxWoWr2dMMmxg6vgC1914moHIstLXq5Rx32JmfVewjjkNQW2hSFxSSxy20YFekrQhegooKz8tKSBlnHYpPkwJj2IHi9SIGnUd37AvacMeUJlyLQd_aQ1MtM4U_iedeQyFQZRceM_ihs8X25hvVZecisf5UGts71Vg66HvFRdF-ntIvdMieZV7th8EvbRR5dE055lQs')"></div>
+</div>
+<div class="relative z-20 text-center px-margin-mobile">
+<h1 class="font-display-lg text-display-lg text-primary uppercase leading-none mb-4">Elite Activities</h1>
+<p class="font-title-lg text-title-lg max-w-2xl mx-auto text-on-surface-variant">Forging champions through relentless practice, strategic seminars, and unbreakable brotherhood.</p>
+</div>
+</section>
+<!-- Activities Masonry Gallery -->
+<section class="px-margin-desktop max-w-max-width mx-auto mb-section-gap-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+<div class="max-w-xl">
+<h2 class="font-headline-lg text-headline-lg text-primary uppercase border-l-4 border-primary pl-6 mb-4">The Training Floor</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Witness the discipline. Our gallery captures the high-intensity atmosphere of our diverse combat disciplines and social gatherings.</p>
+</div>
+<div class="flex gap-4">
+<span class="px-4 py-1 bg-surface-container-highest border border-outline-variant text-label-md uppercase font-bold text-primary">All</span>
+<span class="px-4 py-1 border border-outline-variant text-label-md uppercase font-bold text-on-surface-variant hover:text-primary cursor-pointer transition-colors">Training</span>
+<span class="px-4 py-1 border border-outline-variant text-label-md uppercase font-bold text-on-surface-variant hover:text-primary cursor-pointer transition-colors">Social</span>
+<span class="px-4 py-1 border border-outline-variant text-label-md uppercase font-bold text-on-surface-variant hover:text-primary cursor-pointer transition-colors">Seminars</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter auto-rows-[250px]">
+<!-- Bento Grid Items -->
+<div class="md:col-span-8 md:row-span-2 relative group overflow-hidden bg-surface-container border border-outline-variant gold-glow transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A close-up action shot of Muay Thai training at RMUTP Martial Arts Club. A fighter delivers a powerful kick to heavy bags, sweat flying through the air, captured in sharp focus against a dark, high-contrast dojo background. Golden hour light glints off the fighter's focused expression and traditional gear." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB0H3qRj9KqCU_yM5w6QPSmf9MS7uZ3nkuQsbjmaeZJU4YIWcq3M6WpIXb82UkSFqid_Qr-N7AAadkjVi5IS9B-FIibZLXkCPDagjOVSQaP8xRbsa0UddW8kZvGQyieQwIrCZhRkp9x7DV6odvHizCkw6X5-g5o-ifXz_cDqbcumHnMsVdisJJkxGmrNyleO2oVr1HZizuIvmGJ6SwnUfUeYWilK2bSvTNixBQaWw4hBbYuYWZEzZaKzlgQwEOX5le3vRLF-g-VlJ4')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+<span class="text-primary text-label-md font-bold uppercase tracking-widest mb-2">High Intensity</span>
+<h3 class="font-headline-md text-headline-md text-white uppercase">Advanced Muay Thai Drills</h3>
+</div>
+</div>
+<div class="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-surface-container border border-outline-variant gold-glow transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Black and white aesthetic shot of several pairs of boxing gloves and shin guards neatly arranged against a dark textured wall in a premium dojo. The lighting is moody and elite, highlighting the leather textures and the readiness for the RMUTP Martial Arts Club's next session." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD9A5EzKnL54Fu-sYQw121yRFJ52s8B9BU4-KOmvlz4FNty-npH80dcRQrHPcer5ifR5DFjSzvctCh90QIhr6SP5zUwzvTpP6TCylJfvaJ3zVzpPs76-BJ-RRiTHVd2wJyRvvIRvfoUCcRy8fOCvcqMKyA16tB_O4hHp141QPvm3nYabMQnoYvFnw4d6_zFgTtDcdfpVfEve8OFNsKgFGxQf0c9xCJ--lZp4jtaB5NfT2Hln14-Zc4-WQCeIV7r0ltcc8137jPoIWk')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="font-title-lg text-title-lg text-white uppercase">Equipment Prep</h3>
+</div>
+</div>
+<div class="md:col-span-4 md:row-span-2 relative group overflow-hidden bg-surface-container border border-outline-variant gold-glow transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A medium shot of an elite Brazilian Jiu-Jitsu seminar hosted at RMUTP Martial Arts Club. A master instructor is demonstrating a submission technique on the blue mats, surrounded by focused students in white and blue gis. The scene is illuminated by sharp industrial ceiling lights, creating a professional and disciplined mood." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBqXWlmHFcNxHaM859rfdT9Pm4JoRhjuATWS-AKOiSUdynmgQD9JIQpxJXUTgyBujhAgM_k0RmdittXPP7bWGQWztGzcdUTrmzkpCQ9edCIUcBFPPy2QbsixYY8qcWidk6RW-NBXb9w2M3P6HrgxRZS2gS548alg_VT5lRGoYiwE42-TUqgmsPKpWzv561aOaNXuK6qbG0xaq-Fb6iiwM85ZGjnX_IE85FFQfAdgEmEQQBPVnVTpY7ZydDDClX-g5b-TZ7IMLYEW9c')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<span class="text-primary text-label-md font-bold uppercase tracking-widest mb-2">Seminar</span>
+<h3 class="font-headline-md text-headline-md text-white uppercase">BJJ Technical Workshop</h3>
+</div>
+</div>
+<div class="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-surface-container border border-outline-variant gold-glow transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="A wide, warm shot of the RMUTP Martial Arts Club members gathering for a post-training social dinner. The lighting is warm and inviting compared to the cool dojo, showing athletes laughing and sharing a meal, emphasizing the club's community and brotherhood aspect. Dark background keeps the focus on the vibrant faces." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBaP_3dvwtwGiRcGTfLirls8qwLoEK2W2HnVmQI2pqYbQj0IEnuOV4WsDc0qCr5rSx5W_zGaVfD1Q4045Q7u9wUhCDNRQkhZhUwMw2YjkZ8sAtn-aZo5utM0X_cozbA4dpiye_WRLxj764kAish7fbiIHD61XnmnqRBSbkE2JiDVW_kKSxDVeTZcXNEPEkOq3uAQswvScQSOV6BX-3Za8O3wO56zQ3prCgEXccTRVH8KUw9ZFwqNfGhCl8NvRkIbbRv4sTIHouDzfA')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="font-title-lg text-title-lg text-white uppercase">Brotherhood Social</h3>
+</div>
+</div>
+<div class="md:col-span-4 md:row-span-1 relative group overflow-hidden bg-surface-container border border-outline-variant gold-glow transition-all duration-500">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Cinematic shot focusing on the hands of a fighter wrapping them in white traditional bandages. The background is a blurred dark dojo with golden light highlights. The focus is on the preparation and the quiet moment of discipline before the storm of activity at RMUTP Martial Arts Club." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAwdxwziClJpKr1PoJq77sbuKVD11POEXpzrtF6zaA9_V6awvDaXWlMtzvLBhir6wdVQeI6zfVsWViyRVGmKRbD2zI6J_TKNcG64mIjb7HE2T3SnbNSjnullqq1R7oTmud2eDSirSRzBfscWSzxIExmAtaceBNlb0rhZq5BsblXWG5QJcFnXS68LVWKZl16uiLewazSLKSWA-LLunczqZaEf2JBKv1hifdsMyhHohreMd0LyTyVTCOMxlcTRZ5bonYGpBZPilM37V8')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+<h3 class="font-title-lg text-title-lg text-white uppercase">Rituals of Combat</h3>
+</div>
+</div>
+</div>
+</section>
+<!-- Weekly Activity Calendar -->
+<section class="bg-surface-container-lowest py-section-gap-desktop">
+<div class="px-margin-desktop max-w-max-width mx-auto">
+<div class="flex flex-col items-center text-center mb-16">
+<h2 class="font-display-lg text-headline-lg text-primary uppercase tracking-tight mb-4">Elite Schedule</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Plan your ascent. Our weekly schedule is designed to optimize performance across all disciplines.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-7 gap-4">
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-primary text-on-primary py-3 text-center font-bold uppercase tracking-widest text-label-md">Mon</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">17:00 - 19:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Muay Thai Advanced</h4>
+<p class="text-xs text-on-surface-variant">Main Dojo</p>
+</div>
+<div class="glass-card p-4 border-l-2 border-on-surface-variant/30 space-y-2 opacity-60">
+<span class="text-xs font-bold text-on-surface-variant uppercase">19:30 - 21:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Open Mat</h4>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-surface-container-high text-on-surface-variant py-3 text-center font-bold uppercase tracking-widest text-label-md">Tue</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">17:30 - 19:30</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">BJJ Fundamentals</h4>
+<p class="text-xs text-on-surface-variant">Mat Area B</p>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-primary text-on-primary py-3 text-center font-bold uppercase tracking-widest text-label-md">Wed</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">17:00 - 19:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Muay Thai Sparring</h4>
+<p class="text-xs text-on-surface-variant">Ring A</p>
+</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">19:00 - 20:30</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Conditioning</h4>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-surface-container-high text-on-surface-variant py-3 text-center font-bold uppercase tracking-widest text-label-md">Thu</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">18:00 - 20:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Judo Drills</h4>
+<p class="text-xs text-on-surface-variant">Main Dojo</p>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-primary text-on-primary py-3 text-center font-bold uppercase tracking-widest text-label-md">Fri</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">17:00 - 19:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Mixed Arts Flow</h4>
+<p class="text-xs text-on-surface-variant">Full Hall</p>
+</div>
+<div class="glass-card p-4 border-l-2 border-on-surface-variant/30 space-y-2 opacity-60">
+<span class="text-xs font-bold text-on-surface-variant uppercase">20:00 - Late</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Team Social</h4>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-surface-container-high text-on-surface-variant py-3 text-center font-bold uppercase tracking-widest text-label-md">Sat</div>
+<div class="glass-card p-4 border-l-2 border-primary space-y-2">
+<span class="text-xs font-bold text-primary uppercase">10:00 - 12:00</span>
+<h4 class="font-bold text-on-surface uppercase text-sm">Wrestling Clinic</h4>
+</div>
+</div>
+<!-- Day Column -->
+<div class="space-y-4">
+<div class="bg-error-container text-on-error-container py-3 text-center font-bold uppercase tracking-widest text-label-md">Sun</div>
+<div class="glass-card p-4 border-l-2 border-error-container space-y-2 flex flex-col items-center justify-center h-32">
+<span class="material-symbols-outlined text-4xl mb-2">bedtime</span>
+<h4 class="font-bold uppercase text-xs">Recovery Day</h4>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-section-gap-desktop relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-primary/10 mix-blend-overlay"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background"></div>
+</div>
+<div class="px-margin-desktop max-w-max-width mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-2xl">
+<h2 class="font-display-lg text-headline-lg text-white uppercase mb-6 leading-tight">Ready to join the <span class="text-primary italic">elite</span> ranks?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Participation in activities is open to all students and staff. Start your journey today.</p>
+</div>
+<div class="flex flex-col sm:flex-row gap-6 shrink-0">
+<button class="bg-primary text-on-primary px-10 py-4 font-headline-md text-title-lg uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 border-2 border-primary">Register Now</button>
+<button class="border-2 border-white text-white px-10 py-4 font-headline-md text-title-lg uppercase tracking-widest hover:bg-white hover:text-black transition-all active:scale-95">Contact Coach</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest w-full py-section-gap-desktop border-t-2 border-primary">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter px-margin-desktop max-w-max-width mx-auto items-start">
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<img alt="RMUTP Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9DegY7iMD0tGWzR7vvTMuc0C1CpDAPV1adPZfyswpa8K1OdvkU7JWSRTN1EYJfM6UDZRsTUfdjfFmcHf9DbqGinq4lor0u7yKrfOxJYHtf5bvHrHnhGKLXN7WXwTCAgRG9zPjYMwZhBXee94pH5uC_h8EBti_hopTF1OpkzbCKk0OZW2Id91tgWEDewZVedYjQHdpl3aPXWmVCBBiTQ-uPP2ccvyEpRoOwMYrZaaBeri-9p2l58d7ZhnQyI_bG1OxWkiEbASJsmA">
+<span class="font-headline-md text-headline-md text-primary">RMUTP MARTIAL ARTS</span>
+</div>
+<p class="text-on-surface-variant font-body-md leading-relaxed">The premier destination for martial arts excellence at RMUTP. We train with honor, fight with respect, and win with discipline.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h3 class="font-headline-md text-title-lg text-primary uppercase mb-2">Quick Links</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-default" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-default" href="#">Terms of Service</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-default" href="#">Contact Coach</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-default" href="#">Dojo Rules</a>
+<a class="font-body-md text-body-md text-primary font-bold transition-colors cursor-default" href="#">Join the Elite</a>
+</div>
+<div class="space-y-6">
+<h3 class="font-headline-md text-title-lg text-primary uppercase mb-2">Location</h3>
+<div class="w-full h-48 bg-surface-container rounded-lg overflow-hidden border border-outline-variant">
+<div class="w-full h-full bg-cover bg-center" data-alt="A map visualization centered on RMUTP university campus in Bangkok, Thailand, showing the strategic location of the martial arts club dojo. The map is styled with a dark mode aesthetic and gold pin markers." data-location="Bangkok, Thailand" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAfeiAnwBOckmrYl4SzSy2GiB5nR7Ai1DIBQe6XE0ymV-Etm9ZNfhu-vDdNprN3QMx-PNt9Ve9eCSGd452REFT_GldwhpS9XLhmscXTm4Sm_5kyBOFeyLNSq89i7R7uSxRRuEgeOgO2W6gQ_VrEUSOJeKfRsAVovotxicHRAUA3KB07jpik4RJdl8d-_Vqq3bU_RhzDSplyb09TraqoYoZ1TC-IkV9Cs4VgKlJ_hKt-d2pgNFcWHlxY0CIJO4ae8CaZanD3752uMLo')"></div>
+</div>
+<p class="text-on-surface-variant text-sm font-body-md">© 2024 RMUTP Martial Arts Club. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+<!-- FAB for quick action -->
+<div class="fixed bottom-10 right-10 z-50">
+<button class="bg-primary text-on-primary w-16 h-16 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-transform gold-glow">
+<span class="material-symbols-outlined text-3xl">add_task</span>
+</button>
+</div>
+<script>
+        // Simple parallax effect for images on scroll
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallaxImages = document.querySelectorAll('.bg-cover');
+            parallaxImages.forEach(img => {
+                const speed = 0.4;
+                img.style.backgroundPositionY = -(scrolled * speed) + 'px';
+            });
+        });
+
+        // Hover animation for grid items handled by Tailwind classes (group-hover:scale-110 etc)
+    </script>
+
+
+</body></html>

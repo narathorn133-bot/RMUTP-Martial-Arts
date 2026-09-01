@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin — ชมรมศิลปะป้องกันตัวเอง</title>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --purple:#4A2F8A;--purple-dark:#2D1B5E;--purple-soft:#6B4DB0;
+  --purple-pale:#EDE8F8;--gold:#C9A84C;--white:#fff;
+  --bg:#F4F1FB;--surface:#fff;--border:rgba(107,77,176,0.15);
+  --text:#1A1228;--muted:#8878AA;--danger:#DC2626;--success:#16A34A;
+}
+body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
+/* ── LOGIN ── */
+#login-page{
+  min-height:100vh;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--purple-dark),var(--purple));
+  padding:24px;
+}
+.login-box{
+  background:#fff;border-radius:16px;padding:48px 40px;
+  width:100%;max-width:420px;
+  box-shadow:0 24px 60px rgba(45,27,94,0.25);
+}
+.login-logo{
+  text-align:center;margin-bottom:32px;
+}
+.login-logo .emblem{
+  width:56px;height:56px;background:var(--gold);border-radius:10px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:1.5rem;font-weight:700;color:var(--purple-dark);
+  font-family:'Kanit',sans-serif;margin-bottom:12px;
+}
+.login-logo h1{font-family:'Kanit',sans-serif;font-size:1.1rem;font-weight:700;color:var(--purple)}
+.login-logo p{font-size:0.8rem;color:var(--muted);margin-top:2px}
+.lf{display:flex;flex-direction:column;gap:14px}
+.lf label{font-size:0.72rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;display:block;font-family:'Kanit',sans-serif}
+.lf input{
+  width:100%;padding:12px 14px;border:1.5px solid var(--border);
+  border-radius:8px;font-size:0.95rem;font-family:'Sarabun',sans-serif;
+  outline:none;transition:border-color 0.2s;color:var(--text);
+}
+.lf input:focus{border-color:var(--purple)}
+.btn-login{
+  width:100%;padding:14px;background:var(--purple);color:#fff;
+  border:none;border-radius:8px;font-family:'Kanit',sans-serif;
+  font-weight:600;font-size:0.95rem;letter-spacing:1px;cursor:pointer;
+  margin-top:4px;transition:background 0.2s;
+}
+.btn-login:hover{background:var(--purple-soft)}
+.login-err{color:var(--danger);font-size:0.82rem;text-align:center;display:none}
+
+/* ── ADMIN LAYOUT ── */
+#admin-page{display:none;min-height:100vh}
+.sidebar{
+  position:fixed;top:0;left:0;bottom:0;width:240px;
+  background:var(--purple-dark);
+  display:flex;flex-direction:column;z-index:100;
+}
+.sb-logo{
+  padding:24px 20px;border-bottom:1px solid rgba(255,255,255,0.08);
+}
+.sb-logo .emblem{
+  width:36px;height:36px;background:var(--gold);border-radius:7px;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:1rem;font-weight:700;color:var(--purple-dark);
+  font-family:'Kanit',sans-serif;margin-bottom:8px;
+}
+.sb-logo h2{font-family:'Kanit',sans-serif;font-size:0.85rem;font-weight:700;color:#fff}
+.sb-logo p{font-size:0.65rem;color:rgba(255,255,255,0.4);margin-top:1px}
+.sb-nav{flex:1;padding:16px 10px;display:flex;flex-direction:column;gap:2px;overflow-y:auto}
+.sb-item{
+  display:flex;align-items:center;gap:12px;padding:10px 12px;
+  border-radius:8px;cursor:pointer;transition:background 0.2s;
+  color:rgba(255,255,255,0.55);font-family:'Kanit',sans-serif;
+  font-size:0.85rem;font-weight:400;border:none;background:none;
+  width:100%;text-align:left;
+}
+.sb-item:hover{background:rgba(255,255,255,0.07);color:#fff}
+.sb-item.active{background:rgba(201,168,76,0.15);color:var(--gold)}
+.sb-item .ic{font-size:1rem;width:20px;text-align:center}
+.sb-footer{padding:16px;border-top:1px solid rgba(255,255,255,0.08)}
+.btn-logout{
+  width:100%;padding:10px;background:rgba(220,38,38,0.12);
+  color:#FCA5A5;border:1px solid rgba(220,38,38,0.2);border-radius:8px;
+  font-family:'Kanit',sans-serif;font-size:0.82rem;cursor:pointer;
+  transition:background 0.2s;
+}
+.btn-logout:hover{background:rgba(220,38,38,0.2)}
+
+.main{margin-left:240px;padding:28px;min-height:100vh}
+.topbar{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:28px;
+}
+.topbar h1{font-family:'Kanit',sans-serif;font-size:1.4rem;font-weight:700;color:var(--text)}
+.topbar-user{font-size:0.8rem;color:var(--muted)}
+
+/* Cards */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.card{background:#fff;border-radius:12px;padding:20px;border:1px solid var(--border)}
+.card-num{font-family:'Kanit',sans-serif;font-size:2rem;font-weight:700;color:var(--purple);line-height:1}
+.card-label{font-size:0.78rem;color:var(--muted);margin-top:4px}
+.card-icon{font-size:1.5rem;margin-bottom:8px}
+
+/* Panels */
+.panel{display:none;animation:fadeIn 0.3s ease}
+.panel.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+.section-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:20px;
+}
+.section-title{font-family:'Kanit',sans-serif;font-size:1.1rem;font-weight:700}
+.btn-add{
+  display:flex;align-items:center;gap:6px;padding:9px 18px;
+  background:var(--purple);color:#fff;border:none;border-radius:8px;
+  font-family:'Kanit',sans-serif;font-size:0.82rem;font-weight:600;
+  cursor:pointer;transition:background 0.2s;
+}
+.btn-add:hover{background:var(--purple-soft)}
+
+/* Table */
+.tbl-wrap{background:#fff;border-radius:12px;border:1px solid var(--border);overflow:hidden}
+table{width:100%;border-collapse:collapse}
+thead{background:var(--purple-pale)}
+th{padding:12px 16px;text-align:left;font-family:'Kanit',sans-serif;font-size:0.72rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--purple)}
+td{padding:12px 16px;font-size:0.88rem;border-bottom:1px solid rgba(107,77,176,0.06);vertical-align:middle}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--bg)}
+.badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:0.68rem;font-family:'Kanit',sans-serif;font-weight:600;letter-spacing:0.5px}
+.badge-new{background:rgba(201,168,76,0.15);color:#7A5A10}
+.badge-old{background:var(--bg);color:var(--muted)}
+.badge-pending{background:rgba(234,179,8,0.12);color:#854D0E}
+.badge-approved{background:rgba(22,163,74,0.1);color:var(--success)}
+.badge-rejected{background:rgba(220,38,38,0.1);color:var(--danger)}
+.btn-edit,.btn-del,.btn-approve,.btn-reject{
+  padding:5px 12px;border-radius:6px;font-family:'Kanit',sans-serif;
+  font-size:0.72rem;font-weight:600;cursor:pointer;border:none;margin-right:4px;
+  transition:opacity 0.2s;
+}
+.btn-edit{background:var(--purple-pale);color:var(--purple)}
+.btn-del{background:rgba(220,38,38,0.08);color:var(--danger)}
+.btn-approve{background:rgba(22,163,74,0.1);color:var(--success)}
+.btn-reject{background:rgba(220,38,38,0.08);color:var(--danger)}
+.btn-edit:hover,.btn-del:hover,.btn-approve:hover,.btn-reject:hover{opacity:0.7}
+
+/* Modal */
+.modal-bg{
+  display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);
+  z-index:500;align-items:center;justify-content:center;padding:20px;
+}
+.modal-bg.open{display:flex}
+.modal{
+  background:#fff;border-radius:16px;padding:32px;
+  width:100%;max-width:520px;max-height:90vh;overflow-y:auto;
+}
+.modal-head{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;
+}
+.modal-title{font-family:'Kanit',sans-serif;font-size:1.1rem;font-weight:700}
+.modal-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--muted)}
+.mf{display:flex;flex-direction:column;gap:14px}
+.mf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.mf-field{display:flex;flex-direction:column;gap:5px}
+.mf-field label{font-size:0.68rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);font-family:'Kanit',sans-serif}
+.mf-field input,.mf-field select,.mf-field textarea{
+  padding:10px 12px;border:1.5px solid var(--border);border-radius:8px;
+  font-family:'Sarabun',sans-serif;font-size:0.9rem;outline:none;
+  transition:border-color 0.2s;color:var(--text);
+}
+.mf-field input:focus,.mf-field select:focus,.mf-field textarea:focus{border-color:var(--purple)}
+.mf-field textarea{min-height:90px;resize:vertical}
+.modal-actions{display:flex;gap:10px;margin-top:8px;justify-content:flex-end}
+.btn-save{
+  padding:10px 24px;background:var(--purple);color:#fff;
+  border:none;border-radius:8px;font-family:'Kanit',sans-serif;
+  font-weight:600;font-size:0.88rem;cursor:pointer;
+}
+.btn-cancel{
+  padding:10px 20px;background:var(--bg);color:var(--muted);
+  border:1px solid var(--border);border-radius:8px;
+  font-family:'Kanit',sans-serif;font-size:0.88rem;cursor:pointer;
+}
+
+/* Toast */
+.toast{
+  position:fixed;bottom:28px;right:28px;z-index:9999;
+  background:var(--purple);color:#fff;padding:12px 24px;
+  border-radius:10px;font-family:'Kanit',sans-serif;font-size:0.88rem;
+  transform:translateY(80px);opacity:0;transition:all 0.35s;
+  pointer-events:none;
+}
+.toast.show{transform:none;opacity:1}
+.empty-state{text-align:center;padding:60px 20px;color:var(--muted);font-size:0.9rem}
+
+@media(max-width:768px){
+  .sidebar{width:200px}
+  .main{margin-left:200px;padding:16px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<!-- ── LOGIN PAGE ── -->
+<div id="login-page">
+  <div class="login-box">
+    <div class="login-logo">
+      <div class="emblem">ศ</div>
+      <h1>Admin Panel</h1>
+      <p>ชมรมศิลปะป้องกันตัวเอง มทร.พระนคร</p>
+    </div>
+    <div class="lf">
+      <div class="mf-field">
+        <label>อีเมล Admin</label>
+        <input type="email" id="l-email" placeholder="admin@sdclub.com"/>
+      </div>
+      <div class="mf-field">
+        <label>รหัสผ่าน</label>
+        <input type="password" id="l-pass" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()"/>
+      </div>
+      <div class="login-err" id="login-err">อีเมลหรือรหัสผ่านไม่ถูกต้อง</div>
+      <button class="btn-login" onclick="doLogin()">เข้าสู่ระบบ</button>
+    </div>
+  </div>
+</div>
+
+<!-- ── ADMIN PAGE ── -->
+<div id="admin-page">
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sb-logo">
+      <div class="emblem">ศ</div>
+      <h2>SD Admin</h2>
+      <p>มทร.พระนคร</p>
+    </div>
+    <div class="sb-nav">
+      <button class="sb-item active" onclick="showPanel('dashboard',this)"><span class="ic">📊</span>ภาพรวม</button>
+      <button class="sb-item" onclick="showPanel('news',this)"><span class="ic">📰</span>จัดการข่าวสาร</button>
+      <button class="sb-item" onclick="showPanel('members',this)"><span class="ic">👥</span>ผู้สมัครสมาชิก</button>
+      <button class="sb-item" onclick="showPanel('teachers',this)"><span class="ic">👨‍🏫</span>อาจารย์</button>
+      <button class="sb-item" onclick="showPanel('athletes',this)"><span class="ic">🥋</span>นักกีฬา</button>
+      <button class="sb-item" onclick="showPanel('contact',this)"><span class="ic">✉️</span>ข้อความติดต่อ</button>
+    </div>
+    <div class="sb-footer">
+      <button class="btn-logout" onclick="doLogout()">🚪 ออกจากระบบ</button>
+    </div>
+  </div>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="topbar">
+      <h1 id="page-title">ภาพรวม</h1>
+      <div class="topbar-user" id="user-email"></div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="panel active" id="panel-dashboard">
+      <div class="cards">
+        <div class="card"><div class="card-icon">📰</div><div class="card-num" id="cnt-news">0</div><div class="card-label">ข่าวสาร</div></div>
+        <div class="card"><div class="card-icon">⏳</div><div class="card-num" id="cnt-pending">0</div><div class="card-label">รอการอนุมัติ</div></div>
+        <div class="card"><div class="card-icon">✅</div><div class="card-num" id="cnt-approved">0</div><div class="card-label">สมาชิกอนุมัติแล้ว</div></div>
+        <div class="card"><div class="card-icon">✉️</div><div class="card-num" id="cnt-msg">0</div><div class="card-label">ข้อความใหม่</div></div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ระบบ</th><th>สถานะ</th></tr></thead>
+          <tbody>
+            <tr><td>🔥 Firebase Authentication</td><td><span class="badge badge-approved">เชื่อมต่อแล้ว</span></td></tr>
+            <tr><td>🗄️ Cloud Firestore (Bangkok)</td><td><span class="badge badge-approved">เชื่อมต่อแล้ว</span></td></tr>
+            <tr><td>🌐 เว็บไซต์ชมรม</td><td><span class="badge badge-approved">ออนไลน์</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- NEWS -->
+    <div class="panel" id="panel-news">
+      <div class="section-head">
+        <div class="section-title">จัดการข่าวสาร</div>
+        <button class="btn-add" onclick="openModal('news')">+ เพิ่มข่าว</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>หัวข้อ</th><th>หมวด</th><th>วันที่</th><th>สถานะ</th><th>จัดการ</th></tr></thead>
+          <tbody id="news-body"><tr><td colspan="5" class="empty-state">กำลังโหลด...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- MEMBERS -->
+    <div class="panel" id="panel-members">
+      <div class="section-head">
+        <div class="section-title">ผู้สมัครสมาชิก</div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ชื่อ-นามสกุล</th><th>รหัสนักศึกษา</th><th>คณะ</th><th>วิชา</th><th>สถานะ</th><th>จัดการ</th></tr></thead>
+          <tbody id="members-body"><tr><td colspan="6" class="empty-state">กำลังโหลด...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- TEACHERS -->
+    <div class="panel" id="panel-teachers">
+      <div class="section-head">
+        <div class="section-title">คณะอาจารย์</div>
+        <button class="btn-add" onclick="openModal('teacher')">+ เพิ่มอาจารย์</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ชื่อ-นามสกุล</th><th>ตำแหน่ง</th><th>วิชาที่สอน</th><th>จัดการ</th></tr></thead>
+          <tbody id="teachers-body"><tr><td colspan="4" class="empty-state">กำลังโหลด...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ATHLETES -->
+    <div class="panel" id="panel-athletes">
+      <div class="section-head">
+        <div class="section-title">นักกีฬามหาวิทยาลัย</div>
+        <button class="btn-add" onclick="openModal('athlete')">+ เพิ่มนักกีฬา</button>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ชื่อ-นามสกุล</th><th>สาขา</th><th>วิชา</th><th>ผลงาน</th><th>จัดการ</th></tr></thead>
+          <tbody id="athletes-body"><tr><td colspan="5" class="empty-state">กำลังโหลด...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="panel" id="panel-contact">
+      <div class="section-head">
+        <div class="section-title">ข้อความติดต่อ</div>
+      </div>
+      <div class="tbl-wrap">
+        <table>
+          <thead><tr><th>ชื่อ</th><th>ช่องทาง</th><th>เรื่อง</th><th>ข้อความ</th><th>วันที่</th><th>จัดการ</th></tr></thead>
+          <tbody id="contact-body"><tr><td colspan="6" class="empty-state">กำลังโหลด...</td></tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── MODALS ── -->
+<!-- News Modal -->
+<div class="modal-bg" id="modal-news">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title" id="news-modal-title">เพิ่มข่าวสาร</div>
+      <button class="modal-close" onclick="closeModal('news')">×</button>
+    </div>
+    <div class="mf">
+      <input type="hidden" id="news-id"/>
+      <div class="mf-field"><label>หัวข้อข่าว</label><input type="text" id="n-title" placeholder="หัวข้อข่าว"/></div>
+      <div class="mf-row">
+        <div class="mf-field"><label>หมวดหมู่</label>
+          <select id="n-cat">
+            <option>ผลการแข่งขัน</option><option>ประกาศ</option>
+            <option>กิจกรรม</option><option>ข่าวทั่วไป</option>
+          </select>
+        </div>
+        <div class="mf-field"><label>สถานะ</label>
+          <select id="n-status"><option value="new">ใหม่</option><option value="old">เก่า</option></select>
+        </div>
+      </div>
+      <div class="mf-field"><label>เนื้อหา</label><textarea id="n-body" placeholder="รายละเอียดข่าว..."></textarea></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('news')">ยกเลิก</button>
+        <button class="btn-save" onclick="saveNews()">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Teacher Modal -->
+<div class="modal-bg" id="modal-teacher">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">เพิ่ม/แก้ไข อาจารย์</div>
+      <button class="modal-close" onclick="closeModal('teacher')">×</button>
+    </div>
+    <div class="mf">
+      <input type="hidden" id="teacher-id"/>
+      <div class="mf-field"><label>ชื่อ-นามสกุล</label><input type="text" id="t-name" placeholder="เช่น ผศ.ดร.วิชัย สุขสมบูรณ์"/></div>
+      <div class="mf-row">
+        <div class="mf-field"><label>ตำแหน่ง</label><input type="text" id="t-role" placeholder="อาจารย์ที่ปรึกษา"/></div>
+        <div class="mf-field"><label>วิชาที่สอน</label><input type="text" id="t-subject" placeholder="มวยไทย · ครา-วมากา"/></div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('teacher')">ยกเลิก</button>
+        <button class="btn-save" onclick="saveTeacher()">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Athlete Modal -->
+<div class="modal-bg" id="modal-athlete">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">เพิ่ม/แก้ไข นักกีฬา</div>
+      <button class="modal-close" onclick="closeModal('athlete')">×</button>
+    </div>
+    <div class="mf">
+      <input type="hidden" id="athlete-id"/>
+      <div class="mf-field"><label>ชื่อ-นามสกุล</label><input type="text" id="a-name" placeholder="ชื่อนักกีฬา"/></div>
+      <div class="mf-row">
+        <div class="mf-field"><label>สาขาวิชา</label><input type="text" id="a-dept" placeholder="วิศวกรรมไฟฟ้า"/></div>
+        <div class="mf-field"><label>วิชากีฬา</label>
+          <select id="a-sport">
+            <option>มวยไทย</option><option>เทควันโด</option><option>คิกบ็อกซิ่ง</option>
+            <option>ยูโด</option><option>ยูยิตสู</option><option>มวยสากล</option>
+          </select>
+        </div>
+      </div>
+      <div class="mf-field"><label>ผลงาน/เกียรติประวัติ</label><input type="text" id="a-award" placeholder="แชมป์ภูมิภาค"/></div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('athlete')">ยกเลิก</button>
+        <button class="btn-save" onclick="saveAthlete()">บันทึก</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Firebase SDK -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
+import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-auth.js";
+import { getFirestore, collection, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAhamIMVHCg-R3fQOBVqUmKKCoqw0Lj3Hw",
+  authDomain: "sdclub-rmutp.firebaseapp.com",
+  projectId: "sdclub-rmutp",
+  storageBucket: "sdclub-rmutp.firebasestorage.app",
+  messagingSenderId: "305458803535",
+  appId: "1:305458803535:web:597b8469108ce59e5d0b3a",
+  measurementId: "G-PGLQ5LNGGV"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+// ── AUTH STATE ──
+onAuthStateChanged(auth, user => {
+  if(user){
+    document.getElementById('login-page').style.display='none';
+    document.getElementById('admin-page').style.display='block';
+    document.getElementById('user-email').textContent = user.email;
+    loadAll();
+  } else {
+    document.getElementById('login-page').style.display='flex';
+    document.getElementById('admin-page').style.display='none';
+  }
+});
+
+// ── LOGIN ──
+window.doLogin = async () => {
+  const email = document.getElementById('l-email').value.trim();
+  const pass  = document.getElementById('l-pass').value;
+  const err   = document.getElementById('login-err');
+  err.style.display='none';
+  try {
+    await signInWithEmailAndPassword(auth, email, pass);
+  } catch(e) {
+    err.style.display='block';
+  }
+};
+
+window.doLogout = async () => {
+  await signOut(auth);
+};
+
+// ── TOAST ──
+window.toast = (msg, ok=true) => {
+  const t = document.getElementById('toast');
+  t.textContent = (ok?'✅ ':'❌ ') + msg;
+  t.style.background = ok ? 'var(--purple)' : 'var(--danger)';
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 3000);
+};
+
+// ── LOAD ALL ──
+async function loadAll(){
+  await Promise.all([loadNews(), loadMembers(), loadTeachers(), loadAthletes(), loadContacts()]);
+  updateDashboard();
+}
+
+// ── NEWS ──
+let newsData = [];
+async function loadNews(){
+  const snap = await getDocs(query(collection(db,'news'), orderBy('createdAt','desc')));
+  newsData = snap.docs.map(d=>({id:d.id,...d.data()}));
+  const tbody = document.getElementById('news-body');
+  if(!newsData.length){ tbody.innerHTML='<tr><td colspan="5" class="empty-state">ยังไม่มีข่าว</td></tr>'; return; }
+  tbody.innerHTML = newsData.map(n=>`
+    <tr>
+      <td><b>${n.title||''}</b></td>
+      <td>${n.category||''}</td>
+      <td>${n.createdAt?.toDate?.()?.toLocaleDateString('th-TH')||'-'}</td>
+      <td><span class="badge ${n.status==='new'?'badge-new':'badge-old'}">${n.status==='new'?'ใหม่':'เก่า'}</span></td>
+      <td>
+        <button class="btn-edit" onclick="editNews('${n.id}')">แก้ไข</button>
+        <button class="btn-del" onclick="delNews('${n.id}')">ลบ</button>
+      </td>
+    </tr>`).join('');
+}
+
+window.saveNews = async () => {
+  const id    = document.getElementById('news-id').value;
+  const data  = {
+    title: document.getElementById('n-title').value,
+    category: document.getElementById('n-cat').value,
+    status: document.getElementById('n-status').value,
+    body: document.getElementById('n-body').value,
+  };
+  if(!data.title){ toast('กรุณากรอกหัวข้อ',false); return; }
+  try {
+    if(id){ await updateDoc(doc(db,'news',id), data); }
+    else { await addDoc(collection(db,'news'), {...data, createdAt: serverTimestamp()}); }
+    closeModal('news'); await loadNews(); updateDashboard();
+    toast('บันทึกข่าวสำเร็จ');
+  } catch(e){ toast('เกิดข้อผิดพลาด',false); }
+};
+
+window.editNews = (id) => {
+  const n = newsData.find(x=>x.id===id);
+  if(!n) return;
+  document.getElementById('news-id').value = id;
+  document.getElementById('n-title').value = n.title||'';
+  document.getElementById('n-cat').value = n.category||'ประกาศ';
+  document.getElementById('n-status').value = n.status||'new';
+  document.getElementById('n-body').value = n.body||'';
+  document.getElementById('news-modal-title').textContent='แก้ไขข่าว';
+  openModal('news');
+};
+
+window.delNews = async (id) => {
+  if(!confirm('ลบข่าวนี้?')) return;
+  await deleteDoc(doc(db,'news',id));
+  await loadNews(); updateDashboard();
+  toast('ลบข่าวแล้ว');
+};
+
+// ── MEMBERS ──
+let membersData = [];
+async function loadMembers(){
+  const snap = await getDocs(query(collection(db,'members'), orderBy('createdAt','desc')));
+  membersData = snap.docs.map(d=>({id:d.id,...d.data()}));
+  const tbody = document.getElementById('members-body');
+  if(!membersData.length){ tbody.innerHTML='<tr><td colspan="6" class="empty-state">ยังไม่มีผู้สมัคร</td></tr>'; return; }
+  tbody.innerHTML = membersData.map(m=>`
+    <tr>
+      <td><b>${m.fname||''} ${m.lname||''}</b></td>
+      <td>${m.studentId||'-'}</td>
+      <td>${m.faculty||'-'}</td>
+      <td>${m.interest||'-'}</td>
+      <td><span class="badge badge-${m.status||'pending'}">${{pending:'รอการอนุมัติ',approved:'อนุมัติแล้ว',rejected:'ปฏิเสธ'}[m.status||'pending']}</span></td>
+      <td>
+        ${m.status!=='approved'?`<button class="btn-approve" onclick="approveMember('${m.id}','approved')">อนุมัติ</button>`:''}
+        ${m.status!=='rejected'?`<button class="btn-reject" onclick="approveMember('${m.id}','rejected')">ปฏิเสธ</button>`:''}
+      </td>
+    </tr>`).join('');
+}
+
+window.approveMember = async (id, status) => {
+  await updateDoc(doc(db,'members',id), {status});
+  await loadMembers(); updateDashboard();
+  toast(status==='approved'?'อนุมัติสมาชิกแล้ว':'ปฏิเสธสมาชิกแล้ว');
+};
+
+// ── TEACHERS ──
+let teachersData = [];
+async function loadTeachers(){
+  const snap = await getDocs(collection(db,'teachers'));
+  teachersData = snap.docs.map(d=>({id:d.id,...d.data()}));
+  const tbody = document.getElementById('teachers-body');
+  if(!teachersData.length){ tbody.innerHTML='<tr><td colspan="4" class="empty-state">ยังไม่มีข้อมูลอาจารย์</td></tr>'; return; }
+  tbody.innerHTML = teachersData.map(t=>`
+    <tr>
+      <td><b>${t.name||''}</b></td>
+      <td>${t.role||''}</td>
+      <td>${t.subject||''}</td>
+      <td>
+        <button class="btn-edit" onclick="editTeacher('${t.id}')">แก้ไข</button>
+        <button class="btn-del" onclick="delTeacher('${t.id}')">ลบ</button>
+      </td>
+    </tr>`).join('');
+}
+
+window.saveTeacher = async () => {
+  const id   = document.getElementById('teacher-id').value;
+  const data = { name:document.getElementById('t-name').value, role:document.getElementById('t-role').value, subject:document.getElementById('t-subject').value };
+  if(!data.name){ toast('กรุณากรอกชื่อ',false); return; }
+  if(id){ await updateDoc(doc(db,'teachers',id),data); }
+  else { await addDoc(collection(db,'teachers'),data); }
+  closeModal('teacher'); await loadTeachers();
+  toast('บันทึกข้อมูลอาจารย์แล้ว');
+};
+
+window.editTeacher = (id) => {
+  const t = teachersData.find(x=>x.id===id);
+  document.getElementById('teacher-id').value=id;
+  document.getElementById('t-name').value=t.name||'';
+  document.getElementById('t-role').value=t.role||'';
+  document.getElementById('t-subject').value=t.subject||'';
+  openModal('teacher');
+};
+
+window.delTeacher = async (id) => {
+  if(!confirm('ลบอาจารย์นี้?')) return;
+  await deleteDoc(doc(db,'teachers',id));
+  await loadTeachers(); toast('ลบข้อมูลแล้ว');
+};
+
+// ── ATHLETES ──
+let athletesData = [];
+async function loadAthletes(){
+  const snap = await getDocs(collection(db,'athletes'));
+  athletesData = snap.docs.map(d=>({id:d.id,...d.data()}));
+  const tbody = document.getElementById('athletes-body');
+  if(!athletesData.length){ tbody.innerHTML='<tr><td colspan="5" class="empty-state">ยังไม่มีข้อมูลนักกีฬา</td></tr>'; return; }
+  tbody.innerHTML = athletesData.map(a=>`
+    <tr>
+      <td><b>${a.name||''}</b></td>
+      <td>${a.dept||''}</td>
+      <td>${a.sport||''}</td>
+      <td>${a.award||''}</td>
+      <td>
+        <button class="btn-edit" onclick="editAthlete('${a.id}')">แก้ไข</button>
+        <button class="btn-del" onclick="delAthlete('${a.id}')">ลบ</button>
+      </td>
+    </tr>`).join('');
+}
+
+window.saveAthlete = async () => {
+  const id   = document.getElementById('athlete-id').value;
+  const data = { name:document.getElementById('a-name').value, dept:document.getElementById('a-dept').value, sport:document.getElementById('a-sport').value, award:document.getElementById('a-award').value };
+  if(!data.name){ toast('กรุณากรอกชื่อ',false); return; }
+  if(id){ await updateDoc(doc(db,'athletes',id),data); }
+  else { await addDoc(collection(db,'athletes'),data); }
+  closeModal('athlete'); await loadAthletes();
+  toast('บันทึกข้อมูลนักกีฬาแล้ว');
+};
+
+window.editAthlete = (id) => {
+  const a = athletesData.find(x=>x.id===id);
+  document.getElementById('athlete-id').value=id;
+  document.getElementById('a-name').value=a.name||'';
+  document.getElementById('a-dept').value=a.dept||'';
+  document.getElementById('a-sport').value=a.sport||'มวยไทย';
+  document.getElementById('a-award').value=a.award||'';
+  openModal('athlete');
+};
+
+window.delAthlete = async (id) => {
+  if(!confirm('ลบนักกีฬานี้?')) return;
+  await deleteDoc(doc(db,'athletes',id));
+  await loadAthletes(); toast('ลบข้อมูลแล้ว');
+};
+
+// ── CONTACTS ──
+let contactsData = [];
+async function loadContacts(){
+  const snap = await getDocs(query(collection(db,'contacts'), orderBy('createdAt','desc')));
+  contactsData = snap.docs.map(d=>({id:d.id,...d.data()}));
+  const tbody = document.getElementById('contact-body');
+  if(!contactsData.length){ tbody.innerHTML='<tr><td colspan="6" class="empty-state">ยังไม่มีข้อความ</td></tr>'; return; }
+  tbody.innerHTML = contactsData.map(c=>`
+    <tr>
+      <td><b>${c.name||''}</b></td>
+      <td>${c.contact||'-'}</td>
+      <td>${c.topic||'-'}</td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${c.message||''}</td>
+      <td>${c.createdAt?.toDate?.()?.toLocaleDateString('th-TH')||'-'}</td>
+      <td><button class="btn-del" onclick="delContact('${c.id}')">ลบ</button></td>
+    </tr>`).join('');
+}
+
+window.delContact = async (id) => {
+  if(!confirm('ลบข้อความนี้?')) return;
+  await deleteDoc(doc(db,'contacts',id));
+  await loadContacts(); toast('ลบข้อความแล้ว');
+};
+
+// ── DASHBOARD COUNTS ──
+function updateDashboard(){
+  document.getElementById('cnt-news').textContent = newsData.length;
+  document.getElementById('cnt-pending').textContent = membersData.filter(m=>!m.status||m.status==='pending').length;
+  document.getElementById('cnt-approved').textContent = membersData.filter(m=>m.status==='approved').length;
+  document.getElementById('cnt-msg').textContent = contactsData.length;
+}
+
+// ── UI ──
+window.showPanel = (name, btn) => {
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.sb-item').forEach(b=>b.classList.remove('active'));
+  document.getElementById('panel-'+name).classList.add('active');
+  btn.classList.add('active');
+  const titles={dashboard:'ภาพรวม',news:'จัดการข่าวสาร',members:'ผู้สมัครสมาชิก',teachers:'คณะอาจารย์',athletes:'นักกีฬามหาวิทยาลัย',contact:'ข้อความติดต่อ'};
+  document.getElementById('page-title').textContent = titles[name]||name;
+};
+
+window.openModal = (type) => {
+  if(type==='news'){
+    document.getElementById('news-id').value='';
+    document.getElementById('n-title').value='';
+    document.getElementById('n-body').value='';
+    document.getElementById('news-modal-title').textContent='เพิ่มข่าวสาร';
+  }
+  if(type==='teacher'){ document.getElementById('teacher-id').value=''; document.getElementById('t-name').value=''; document.getElementById('t-role').value=''; document.getElementById('t-subject').value=''; }
+  if(type==='athlete'){ document.getElementById('athlete-id').value=''; document.getElementById('a-name').value=''; document.getElementById('a-dept').value=''; document.getElementById('a-award').value=''; }
+  document.getElementById('modal-'+type).classList.add('open');
+};
+
+window.closeModal = (type) => {
+  document.getElementById('modal-'+type).classList.remove('open');
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Competitions | RMUTP MARTIAL ARTS</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Hanken+Grotesk:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .gold-gradient-text {
+    background: linear-gradient(135deg, #f2ca50 0%, #d4af37 50%, #ffe088 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+        .bento-card {
+            background-color: #1A1A1A;
+            border: 1px solid #4d4635;
+            transition: all 0.3s ease;
+        }
+        .bento-card:hover {
+            border-color: #f2ca50;
+            transform: translateY(-4px);
+        }
+        .glass-header {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .belt-rank-progress {
+            background: linear-gradient(90deg, #d4af37, #f2ca50);
+        }
+    </style>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "on-secondary-container": "#b4b5b5",
+                "surface-container-lowest": "#0e0e0e",
+                "tertiary": "#d0cdcd",
+                "primary": "#f2ca50",
+                "surface-dim": "#131313",
+                "background": "#131313",
+                "on-tertiary-container": "#454544",
+                "inverse-primary": "#735c00",
+                "surface": "#131313",
+                "primary-fixed": "#ffe088",
+                "tertiary-fixed": "#e5e2e1",
+                "outline-variant": "#4d4635",
+                "inverse-on-surface": "#303030",
+                "inverse-surface": "#e2e2e2",
+                "outline": "#99907c",
+                "surface-container-low": "#1b1b1b",
+                "secondary-fixed-dim": "#c6c6c7",
+                "secondary-container": "#454747",
+                "secondary": "#c6c6c7",
+                "tertiary-fixed-dim": "#c8c6c5",
+                "on-error-container": "#ffdad6",
+                "on-primary-fixed-variant": "#574500",
+                "secondary-fixed": "#e2e2e2",
+                "error-container": "#93000a",
+                "tertiary-container": "#b4b2b2",
+                "on-surface": "#e2e2e2",
+                "on-secondary": "#2f3131",
+                "surface-bright": "#393939",
+                "surface-container-high": "#2a2a2a",
+                "on-error": "#690005",
+                "on-primary-fixed": "#241a00",
+                "on-secondary-fixed": "#1a1c1c",
+                "error": "#ffb4ab",
+                "on-tertiary-fixed": "#1c1b1b",
+                "surface-tint": "#e9c349",
+                "on-tertiary": "#313030",
+                "on-primary-container": "#554300",
+                "surface-container": "#1f1f1f",
+                "on-background": "#e2e2e2",
+                "primary-container": "#d4af37",
+                "surface-variant": "#353535",
+                "on-secondary-fixed-variant": "#454747",
+                "surface-container-highest": "#353535",
+                "on-primary": "#3c2f00",
+                "on-surface-variant": "#d0c5af",
+                "primary-fixed-dim": "#e9c349",
+                "on-tertiary-fixed-variant": "#474746"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "section-gap-desktop": "120px",
+                "max-width": "1280px",
+                "section-gap-mobile": "64px",
+                "margin-desktop": "80px",
+                "base": "8px",
+                "gutter": "24px",
+                "margin-mobile": "20px"
+        },
+        "fontFamily": {
+                "body-md": [
+                        "Hanken Grotesk"
+                ],
+                "headline-lg-mobile": [
+                        "Anton"
+                ],
+                "body-lg": [
+                        "Hanken Grotesk"
+                ],
+                "title-lg": [
+                        "Hanken Grotesk"
+                ],
+                "display-lg": [
+                        "Anton"
+                ],
+                "label-md": [
+                        "Hanken Grotesk"
+                ],
+                "headline-md": [
+                        "Anton"
+                ],
+                "headline-lg": [
+                        "Anton"
+                ]
+        },
+        "fontSize": {
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg-mobile": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "title-lg": [
+                        "20px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "700"
+                        }
+                ],
+                "display-lg": [
+                        "80px",
+                        {
+                                "lineHeight": "88px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "headline-md": [
+                        "32px",
+                        {
+                                "lineHeight": "40px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "0.02em",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style id="custom-cursor" type="text/css">body button, body [type='button'], body input[type='reset'], body input[type='submit'], body [role="button"], ::-webkit-search-cancel-button, ::-webkit-search-decoration, ::-webkit-scrollbar-button, ::-webkit-file-upload-button, [role^=button], .cc_pointer, [type="search"]::-webkit-search-cancel-button, a, select, [type="search"]::-webkit-search-decoration, .paper-button, .ytp-progress-bar-container, input[type=submit], :link, :visited, a > *, img,  ::-webkit-scrollbar-button, .ogdlpmhglpejoiomcodnpjnfgcpmgale_pointer, ::-webkit-file-upload-button, .ytp-volume-panel, #myogdlpmhglpejoiomcodnpjnfgcpmgale .icon, body .custom-cursor-on-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAA/hJREFUSEu1lXtM1WUYxz+/3zmcA4FcJ3hJwLjY2ojacDYqOCBWg7SkRNiMhsIfGIvIGUZm2uZWbDFJQnIQhEqAA1kiNcQdZoVdDIEJRCkgSlyUgyLCuXDOrwEJonLOscv77/t9vp89l/d5BcycnyOlGNGWbFHAQxIZNY3yUZcDH8ccFYzm4u6+E+YT//S8FOXmSfWiVLDzAd0A9B6Eqw2kBdcL+/4bSIRU7f0GUe4vz9rpOqE5iWMyezYFHRfGrAXNm8mPqyW1XwYq1/BZK30vNG2mxsmW2Ee/Fm7+r5AxPRvD6oXRfw1pCJXU/jtRuUXclUkitaKM5KCl1f3CwbVWlWzecvXtSFI7x25V2QY+MUPRXoHmBLRGPTeC3fIN2DuWcjjmHQFBMpfVvBCpCDWhFSq8o2fix3vgUi747wFRr4N938OFYVDYIEmGm1cFbYpH/mvFVo/wFCSkUsXy9XMgPQfAdyfI7IGLQ1DWDCnBGPtHSL9QYfxkUctbmCY6UMibCcwbnAyeykQqYAUC0cjQYEexEMO4VEg9oZWh90Bywff9vyHdw/BVE2wLAYWMbM1pvuj/Dl+lu7ZS0/gLgjKJldkdglTMKuSOP+AdKzDSJdF38jwerGKQbwipDDML6dJAWROkhYBSTsG1MzTfukSWZwz518+Q/MeXOciEtwWp5KEWnikOYNkr02Vpz4LG9DoMEx6EVgaYz0QDpc2Q9uwMpGWsh2zPjbQZBniuff+pXnQvCVK5i4HIFjn2D8/2qy0Tfk2H4KPg8+rcxueA3y6QOQCTmdwul1JO/rWGqUz2e8XRpu8n6vfc2m5Td7QglSiqCcqMwi917lB8uwYefw+WqOaM8J8l4P0miLbAlRtQ3Q6bV071pExzlk7dIO8ujqRV38+LM5ACluDi08bqGicc/a19xBZ1k5C1HXm1XVJn9PR05ZOIV9TnhFeJiHKLBtYIhoY1lFaVnxwfGl0/DVEjp4sKAravIyjTGg/Lmu4R2FN3giFFzMyLlwpYgFK8zFOHnfCJs2xiSdE0gGF3zac2Ty7fNmetSIcIROneyJo6EecASzbz309ussKzaE+cj7erTDh0z+6SiogfdX+6gPBjcgflwn8EMk6YMCRXXRbHx19QHtnUdt8FGV8XltHoEbK3fsV23Gwml9SDnbxWiZzqgeOtOxavm9ld97U4l7rXT+Gc8dtjuxARH4iyoBDTqKSNYIud2jxk8rYxtTxtqWpD1p0fvQXcB+fgw0ZjPYnysNvSef+TKcHphIW+rl4dRzy3uiyTme+PIMDFEdhwCmPfxPAjvO7aYx2kdbdC1hVc5HA9PE4mySYs1cwA8lt6XYppi+1nd2r/Av84lFJqoq0wAAAAAElFTkSuQmCC") 9 0, pointer !important;} html,body,body select,body .custom-cursor-default-hover {cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAxFJREFUSEu10mtIU2Ecx/Hfc9w8eanQUEjCelF0wcKEsgsRQkQp3ZmBtkwNKyoKSyzphUVTHNnFyFqBXZAKtcjAlV3sRZbFZCqVWqaYprN53aZz81yeOLOCKHXT+X97nvP9nOfPIYk5j17kRbz0oJxXLMLU7ZiEITXbKC3KLkWGSfteID67EZr5xd0OqVJQbtE1yK4zb3C44U4zZAEKhKkq3QkRvYJyIRrI5H5AUY8eikZNBzB1M5Zn69wF/YVI0Qemauxpyu/o52zbEX6lwh3QP4gULe7/BGVDXp+FCElYeqlwotB/ESmqt7YivC7LwjPMUYRdzpsINCIiRRtsXVhRr+bkFrr7QJlvQXp6ujgebFRECtYMtmMg9zVCq8X9PvkxmklBHFHDAISsV1QwmNVsQewJV6Exb/I7SIcEiGlPRaG9L7uY9zwZXRgtOIs5jUhBOsiBXHgHa11bRnv39DPznkTanYFcQhyQ2Q6SV42ht19vmQI8DwfmRvePBbmEUAn5BSG3AqTGcMPjfkzSxBBBhFDyGaSmTaR9doH0WCmsHCU8T8HKeU4uP8veUWSNCzEOAv4sIGMAvGkBd6X8wxBBCifzNYq+tOvxsi2d8fHE5lgfQMjwBUecf9b1ugM4VAGUrAdm+QAw2yFmlOFHK50TdDfq21hf/b/nfyGlLUDUM/QIHOpV4ViZFgbieKmoFkPa2gL2pmLnuJHFGshudgJJZeiCF7bChl5vFuUDcfCTGNFkA5OiRWNgc/Bc1bFWVyGi30Hpw2Qgsx6VArALieSzI3KVPr+4CuuOLBlOisX3wbcdyWcPGpUuIwmp9N7t+fAS7DiIA6TtT+AqXR208F3597XSzjwh8ibQu36GXmZGRICya/hDnJzhnY8wbNXxD5rZipA4v+WOE4IuFcJH9Sk2ASon+45joyLQJUdumLmgpCRoLxjpR+2sAKddo7MR743T4izdzkKjI6/SpwT4c1WZwVsWeFoaoKw6B/tAk5qdajpNNsHqHoSCoDI53lvGnPfgeY258mIOGBjJPnDOAtK5n6qgeykLdBAFAAAAAElFTkSuQmCC") 0 0, auto !important;}</style></head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant"><div class="flex justify-between items-center px-margin-desktop py-4 max-w-max-width mx-auto"><div class="flex items-center gap-4"><div class="h-12 w-12 bg-white p-1 rounded-lg flex items-center justify-center"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEi9UjUrIf6v4g4tNmmGqTNvACBcqyhsGmHg14ceBe01ixWI6y8QWnl3VC0hA3jSAfwQY-GxYh3TaRgchYE9UapUvQKXAQsdDn5MBtMLlshpWvfzo4zvccfK2rvOQM__gVcaRqR-T7LNWBXUvUXQAUWclPLWjdVjhZYQvzGJl0yNx1lr-Vl9_SG2f2jf6eS5BQHk6cDTK0TRAZypymtWrYf9391p0khgZHoE-x0LuLWuImtcZh--JkcLJibkBWBWS1jA" alt="RMUTP Logo" class="h-full w-auto object-contain"></div><div class="flex flex-col leading-none"><span class="font-headline-md text-sm text-on-surface uppercase tracking-wider">ชมรมกีฬาต่อสู้</span><span class="font-display-lg text-2xl gold-gradient-text uppercase tracking-tighter">RMUTP</span></div></div><div class="hidden md:flex items-center gap-8"><a href="index.html" class="font-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Home</a><a href="club-info.html" class="font-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Club Info</a><a href="combat-sports.html" class="font-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Combat Sports</a><a href="news.html" class="font-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">News</a><a href="activities.html" class="font-label-md uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors">Activities</a><a href="competitions.html" class="font-label-md uppercase tracking-widest text-primary border-b-2 border-primary pb-1">Competitions</a></div><div class="flex items-center gap-4"><a href="login.html" class="px-4 py-2 bg-primary text-on-primary font-label-md rounded hover:bg-primary-fixed flex items-center gap-2">
+  <span class="material-symbols-outlined text-[20px]">account_circle</span>
+  LOGIN
+</a>
+</div>
+</div>
+</nav>
+ class="material-symbols-outlined text-primary">person</span></div></div></div></nav>
+<!-- Hero Section -->
+<header class="relative pt-32 pb-20 px-margin-desktop max-w-max-width mx-auto overflow-hidden">
+<div class="absolute top-0 right-0 -z-10 opacity-20 transform translate-x-1/4 -translate-y-1/4">
+<span class="text-[300px] font-display-lg text-primary select-none pointer-events-none opacity-10">BATTLE</span>
+</div>
+<div class="max-w-3xl">
+<h1 class="font-display-lg text-display-lg gold-gradient-text uppercase leading-none mb-6">Battle Arena</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                The proving grounds for RMUTP's elite. Discover upcoming tournaments, track our champions' glory, and witness the rise of the next legend in the martial arts circuit.
+            </p>
+<div class="mt-10 flex gap-6">
+<button class="px-8 py-4 bg-primary text-on-primary font-label-md uppercase tracking-widest flex items-center gap-2 hover:brightness-110 active:scale-95 transition-all">
+                    Register for Tournament
+                    <span class="material-symbols-outlined">stadium</span>
+</button>
+<button class="px-8 py-4 border-2 border-primary text-primary font-label-md uppercase tracking-widest hover:bg-primary/10 active:scale-95 transition-all">
+                    View Rankings
+                </button>
+</div>
+</div>
+</header>
+<!-- Leaderboard & Elite Stats -->
+<section class="py-section-gap-desktop px-margin-desktop max-w-max-width mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Leaderboard (Bento) -->
+<div class="lg:col-span-8 bento-card p-gutter rounded-xl overflow-hidden relative">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="font-headline-md text-headline-md uppercase text-primary">Top Club Fighters</h2>
+<p class="font-label-md text-label-md text-on-surface-variant">Global RMUTP Standings - Season 2024</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary opacity-50">military_tech</span>
+</div>
+<div class="space-y-4">
+<!-- Leaderboard Item 1 -->
+<div class="flex items-center gap-6 p-4 bg-surface-container-high rounded-lg border-l-4 border-primary">
+<span class="font-headline-md text-headline-md text-primary w-8 text-center">01</span>
+<div class="w-14 h-14 rounded-full overflow-hidden border border-primary">
+<img class="w-full h-full object-cover" data-alt="A professional portrait of a Thai male martial artist in his mid-20s, looking intense and focused. He is wearing a black RMUTP martial arts gi with gold trim. The lighting is cinematic, high-contrast, against a dark studio background with golden highlights. Dramatic and powerful atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIlQChGGEllhVe8DVmOwr_ASXRw1bvCui38DQCX8lsNM6V54oLDWx7WYPN008Bqby2SOF0_FZixyaqYGtmZLFWYghul4UybQiTnRKI6D0KoJtEBS59BgzWxmgESJBPOcszU-FS6TgO-1aZw9d4LSCVLjpWAM2t79pha5grP8o-2yiS8JAtxV3B8W_6di-7vZhbneU-g5iwoFDjG-F8BN5vuwocfIZA-ARh3PTRvA24acMBmdhMhODkWE9uDiWr6HNDlzdneFQiGZ4">
+</div>
+<div class="flex-grow">
+<h3 class="font-title-lg text-title-lg uppercase">Piyaphon S.</h3>
+<p class="text-label-md text-on-surface-variant">Muay Thai • Welterweight</p>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md text-primary">12 - 0 - 1</div>
+<div class="text-[10px] uppercase tracking-tighter opacity-70">WINS - LOSS - DRAW</div>
+</div>
+</div>
+<!-- Leaderboard Item 2 -->
+<div class="flex items-center gap-6 p-4 hover:bg-surface-container-high transition-colors rounded-lg">
+<span class="font-headline-md text-headline-md text-secondary w-8 text-center">02</span>
+<div class="w-14 h-14 rounded-full overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" data-alt="A high-intensity action shot of a female athlete practicing karate in a premium dojo. She is wearing a crisp white gi with a black belt. The image uses deep shadows and sharp gold spotlights to emphasize movement and discipline. High-contrast martial arts photography style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZsCwoLRZ-TTYLXwDlabV_znhhCJ2gP4zu9Ts5ZKnYAJKD469rLDjXEucoiMDgxECCZqj3QZGCNnWBh0KIFZPYfNTKvlyqAmqbYgsew9BQ9_hzVAGWsr77irPUvx3CnjxNbbyR7gUQSRksmIvxC-S6IAoubiv3pyUhmv2d6cdWquWAJvFbTQ1XPVbpZ7dfIS9qxeXetRpG-qvh317Gny8VTu-Anb2LbT_McfWMxw3-4iUJvWAtINvZ-BFpeMKgrEo5HtI83uiFhm8">
+</div>
+<div class="flex-grow">
+<h3 class="font-title-lg text-title-lg uppercase">Ananya W.</h3>
+<p class="text-label-md text-on-surface-variant">Karate • Featherweight</p>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md">10 - 2 - 0</div>
+<div class="text-[10px] uppercase tracking-tighter opacity-70">WINS - LOSS - DRAW</div>
+</div>
+</div>
+<!-- Leaderboard Item 3 -->
+<div class="flex items-center gap-6 p-4 hover:bg-surface-container-high transition-colors rounded-lg">
+<span class="font-headline-md text-headline-md text-on-tertiary-fixed-variant w-8 text-center">03</span>
+<div class="w-14 h-14 rounded-full overflow-hidden border border-outline">
+<img class="w-full h-full object-cover" data-alt="A dramatic close-up of a martial arts fighter with intense determination. He has slight sweat on his brow, illuminated by a harsh side light. The palette is dominated by deep blacks and subtle bronze tones, capturing the high-stakes competitive mood of RMUTP athletics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDDl0__o9oSeAPLvYP9hRw9zmbM8LEAelNyaVyaau4c-yEYVJm3nN_D-mZc3yosvQ73Xc0KpLBwbCITWM1IMTbvcvnTUeclrXCfDJn8VcmbJoI8pCC9e1PgHx2z8--2eYq2gJ5lY4YBThSlQd54IY9I-1bMeAYCHQnRz3mAcDXsU-7VvYh7bFAHnLi4PXOYjpbr5_ycN8kP8M3qun8iYrwX0aHUiXpUceKUzlmBjiG5GiPCqv3VO_XMMBvu9kLdf4OmlmRLP_U8Y8Y">
+</div>
+<div class="flex-grow">
+<h3 class="font-title-lg text-title-lg uppercase">Krit C.</h3>
+<p class="text-label-md text-on-surface-variant">Judo • Lightweight</p>
+</div>
+<div class="text-right">
+<div class="font-headline-md text-headline-md">8 - 1 - 2</div>
+<div class="text-[10px] uppercase tracking-tighter opacity-70">WINS - LOSS - DRAW</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Stats/Weight Classes -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<div class="bento-card p-6 rounded-xl flex-grow border-t-4 border-primary">
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Elite Trophies</h3>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-4 rounded text-center">
+<div class="text-3xl mb-1">🥇</div>
+<div class="font-headline-md text-2xl text-primary">14</div>
+<div class="text-[10px] uppercase font-bold text-on-surface-variant">Gold Medals</div>
+</div>
+<div class="bg-surface-container p-4 rounded text-center">
+<div class="text-3xl mb-1">🥈</div>
+<div class="font-headline-md text-2xl text-secondary">08</div>
+<div class="text-[10px] uppercase font-bold text-on-surface-variant">Silver Medals</div>
+</div>
+</div>
+</div>
+<div class="bento-card p-6 rounded-xl flex-grow">
+<h3 class="font-headline-md text-headline-md uppercase mb-4">Weight Divisions</h3>
+<div class="space-y-3">
+<div class="flex justify-between items-center text-label-md">
+<span class="uppercase tracking-wider">Heavyweight</span>
+<span class="text-primary">85kg+</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 45%"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="uppercase tracking-wider">Welterweight</span>
+<span class="text-primary">77kg</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 80%"></div>
+</div>
+<div class="flex justify-between items-center text-label-md">
+<span class="uppercase tracking-wider">Lightweight</span>
+<span class="text-primary">70kg</span>
+</div>
+<div class="w-full h-1 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary" style="width: 65%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Tournaments -->
+<section class="py-section-gap-desktop bg-surface-container-lowest">
+<div class="px-margin-desktop max-w-max-width mx-auto">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline-lg text-headline-lg uppercase gold-gradient-text">Next Challenges</h2>
+<div class="h-px bg-outline-variant flex-grow mx-10 hidden md:block"></div>
+<button class="font-label-md text-label-md uppercase tracking-widest text-primary border border-primary/30 px-6 py-2 hover:bg-primary/5">Calendar View</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Tournament 1 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-xl overflow-hidden mb-6 border border-outline-variant group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A professional sports graphic for a martial arts tournament. Dark textured background with intense gold lighting illuminating a central fighting ring. Bold, futuristic text that says 'Bangkok Clash' is partially obscured by atmospheric smoke and embers. Cinematic, high-stakes aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-05ljEeHDm9ZF43orG0EKYB5l-ATQWE6xH_R5lq_NEUTmwCqXcXDpov3XLVrM0YUnbGnPwz582YP8DSyZIbsSfW35lydyAD7JOZEOC4zwtPFyCg6vfqcVqL-93jaZzBFlDnN2Z4QuWPBFpQVPgbfWnslPYvaACstVtaGnfYGA5atyTn-35G8nUhW7BGVbKPDrjaDUaYFxASwI2nqY6aXGZmlDTtvgOZ0ltUXq7zvn1Ykj8z6iBtbzYUGSQASz77a3zpkKYq09jt0">
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-md uppercase">12 Oct 2024</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-primary transition-colors">The Bangkok Open Clash</h3>
+<p class="text-label-md text-on-surface-variant flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                        National Stadium Arena, BKK
+                    </p>
+<div class="mt-4 flex gap-4">
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">Open Qualifiers</span>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">Muay Thai / K1</span>
+</div>
+</div>
+<!-- Tournament 2 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-xl overflow-hidden mb-6 border border-outline-variant group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A dynamic action photograph of two martial artists in mid-sparring, showing a high kick. The scene is shot from a low angle to enhance the drama and athletic power. Lighting consists of vibrant gold backlights and deep black shadows, typical of a professional MMA event. Sharp and impactful." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKCbWgfXS_rdWimI0v_3xzWrPZZGPYubAEi9iNxNwVRdrh2kP1DPGSOgEGtZcon1-jggOPNWdOKLtkTfHkYIqPXz5RX_Jci1eDV41RV9m_cAnGCYEH4a2ZDPYbr4wTrLy21sfuvP-lOIj7RXRidj5ZX4mTG2pyHCush-Y6SLFKzcxhv_AKwt0ZncUXKzKB_pgkCFbb-5WiSn5B5J_jncjYCP5MuPV3JPXyNZ-d6SH-r9W-3gXqpLIVTuZ9D1rj7_iPuQl_0-T779c">
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-md uppercase">05 Nov 2024</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-primary transition-colors">RMUTP Inter-Club Trials</h3>
+<p class="text-label-md text-on-surface-variant flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                        RMUTP Sports Complex
+                    </p>
+<div class="mt-4 flex gap-4">
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">Club Members Only</span>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">All Disciplines</span>
+</div>
+</div>
+<!-- Tournament 3 -->
+<div class="group cursor-pointer">
+<div class="relative h-64 rounded-xl overflow-hidden mb-6 border border-outline-variant group-hover:border-primary transition-colors">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A minimalist yet powerful image of a black belt lying on a dark wooden dojo floor. A single shaft of golden light hits the belt, symbolizing the prestige and honor of victory. The environment is serene and focused, evoking a sense of ancient tradition meeting modern excellence. Elite aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWWTV3hppdjKdZnek93AKehzRyIMs8WRzLABbwEzh5qMRkjAI5EObPqGvn9Pm0jFuJXMIOCcWx36NbA84giwsWeEnFDUaz8ZinGB68kWOmc8P4EA3SlUaDN67oO3ekbs6veOsKe6sQ2ep2N1E3dqPjVUNfKg0kNvj0BlrsBmKNxOLBTtmi7EzYMOr-ag8hXOSNhqSgYnmnKeXMd1aXdQPHuzRukzhzJNyyXEnWtfsVvy86oi-OfVzB9BqF93gl5J83JMdOp35nd24">
+<div class="absolute top-4 left-4 bg-primary text-on-primary px-3 py-1 font-label-md uppercase">20 Dec 2024</div>
+</div>
+<h3 class="font-headline-md text-headline-md uppercase group-hover:text-primary transition-colors">King's Cup National Series</h3>
+<p class="text-label-md text-on-surface-variant flex items-center gap-2 mt-2">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+                        Impact Arena Muang Thong Thani
+                    </p>
+<div class="mt-4 flex gap-4">
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">Elite Invitational</span>
+<span class="bg-surface-container px-2 py-1 text-[10px] font-bold uppercase border border-outline-variant">Traditional Arts</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hall of Fame -->
+<section class="py-section-gap-desktop px-margin-desktop max-w-max-width mx-auto">
+<h2 class="font-headline-lg text-headline-lg uppercase text-center mb-16 gold-gradient-text">Hall of Fame</h2>
+<div class="grid grid-cols-1 md:grid-cols-4 gap- gutter">
+<!-- Legend 1 -->
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-primary grayscale group-hover:grayscale-0 transition-all p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="A legendary martial arts instructor in traditional attire, standing in a regal, powerful pose. He has an aura of wisdom and strength. The photo is styled like an old-school black and white portrait but with a modern high-definition finish and subtle golden lighting on the edges." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUeq6Nm12hGZ4ax2vh7LVs-j9EuwT-d0kAOo1YBdx1z3QLJDjsJcMqQ4HWfNvIlrn94rdEgKaC39z-su4xTHGYBpo4Se36fp8v5nn-Bf3vEs3OzEncKZ5sDBXPKa8GyAKAyYwZ7lujvo_aKgmH-gma1Gug7OBJbd7L6J0GkRE_v4CfEWVYc9AEhN_Qm4dzYWBMJHdRjnMslNraE0hhUxP6LRYTOrGN0_cDhMDlahuZFhlSRPELwV-uJuXZ5lS-WqcJirFrkq1dY94">
+</div>
+</div>
+<h4 class="font-title-lg text-title-lg uppercase">Master Somchai</h4>
+<p class="text-label-md text-primary font-bold">LEGENDARY COACH</p>
+<p class="text-body-md text-on-surface-variant mt-2 italic">"Winner of 5 consecutive national championships 1998-2003"</p>
+</div>
+<!-- Legend 2 -->
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-primary grayscale group-hover:grayscale-0 transition-all p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="A professional fighter with his hands raised in victory, draped in the national flag. Confetti falls around him in a blurred background of stadium lights. High contrast, warm golden tones, and an atmosphere of ultimate triumph and athletic excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE0xOI_oq2eZW35WWm3SN2Lr-W54cScqk08PoyTvlxONeJS6ECM51AN1HhmuW4xHc2NpJrzMuMO8Ti6nWfP-rdQWfdhXkUYHrz213vgD8pKAK9o7ewnEZ0VmsYDpcupuaXqNIb7O25egrgVdFjKeDWtSG8A7r88T7OlFS_xVbpMDVYh5YAISx1hMcaWbDtpuh62k4xrrKpRu9DiF9Z9bRrnz33GOY161fdNmYIoc2VGJrrpnG-Nb8hz-x1PImaqAdvYYLt-EUTeJg">
+</div>
+</div>
+<h4 class="font-title-lg text-title-lg uppercase">Tawanchai K.</h4>
+<p class="text-label-md text-primary font-bold">2022 GOLD MEDALIST</p>
+<p class="text-body-md text-on-surface-variant mt-2 italic">"Unbeaten in the regional inter-university circuit for 3 years"</p>
+</div>
+<!-- Legend 3 -->
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-primary grayscale group-hover:grayscale-0 transition-all p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="A focused female martial artist during a meditation session in a sunlit dojo. The style is pristine and disciplined, emphasizing the mental aspect of combat sports. Dark shadows and bright highlight rays create a spiritual and powerful mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWlGe08EgkrLHpKU_7wVKGGyU-C4--Itgk5rzuOdtlO0kTRROTwUclr7LUvU3u23hy2U79uWsDPwiBcutNHjEjVZYa-h0gvKwCn60SCCOxnWDBewsy-Q_5sy-NriuKsFbmySUjTgcSnbVkQDvARq0IEIGc4hSQ8qYFKGUuYtqsPNWK6hg7dc0QZJtCrFrWws6MlG9RQq4NenOUMje0cytq3zyhI_GU4YfsLR92Qt_aGma2ZXwlKt8jIm70vHhIElhm6OOzr3RC_8E">
+</div>
+</div>
+<h4 class="font-title-lg text-title-lg uppercase">Sirirat J.</h4>
+<p class="text-label-md text-primary font-bold">WORLD KARATE SILVER</p>
+<p class="text-body-md text-on-surface-variant mt-2 italic">"First RMUTP student to place in the International Kata Finals"</p>
+</div>
+<!-- Legend 4 -->
+<div class="text-center group">
+<div class="relative mb-6">
+<div class="absolute inset-0 bg-primary/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-2 border-primary grayscale group-hover:grayscale-0 transition-all p-1">
+<img class="w-full h-full object-cover rounded-full" data-alt="An intense close-up of a martial arts belt being tied, showing detail in the fabric and the practitioner's focused hands. The lighting is low-key with golden accents, emphasizing the dedication and prestige associated with earning rank at RMUTP." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAQHr6DDBqGC2ICBDSclypCmYf2GnHWgsj4SrXKPMLi2qvaWB-4KUYsuRMuzUZn8-DUkq7E5YUxvy-gUvO2Qb7xVqgdi0H46WXyCPXEH7f_QSDRoHYTodMrbDqY86dsfPhfv9IJ_7eq3MB6TLK-1iHFMGHIuB6FgijL-N9YHnho3p08TDnf5GQAfNC5kFywseHvdqr0pPRFNCG4whV8E8cRo0sf3I1yNvCJg_uU7fBFD-clrYdCE-MF3xx0qvxgkX7Ylv_RXRWhaI">
+</div>
+</div>
+<h4 class="font-title-lg text-title-lg uppercase">Vichai P.</h4>
+<p class="text-body-md text-on-surface-variant mt-2 italic">"Pioneered the university's heavyweight Judo division and undefeated state champion"</p>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-12">
+  <div class="px-margin-desktop max-w-max-width mx-auto flex flex-col md:flex-row justify-between items-center gap-6 text-on-surface-variant text-label-md">
+    <div class="flex items-center gap-3">
+      <div class="h-8 w-8 bg-white p-1 rounded flex items-center justify-center">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEi9UjUrIf6v4g4tNmmGqTNvACBcqyhsGmHg14ceBe01ixWI6y8QWnl3VC0hA3jSAfwQY-GxYh3TaRgchYE9UapUvQKXAQsdDn5MBtMLlshpWvfzo4zvccfK2rvOQM__gVcaRqR-T7LNWBXUvUXQAUWclPLWjdVjhZYQvzGJl0yNx1lr-Vl9_SG2f2jf6eS5BQHk6cDTK0TRAZypymtWrYf9391p0khgZHoE-x0LuLWuImtcZh--JkcLJibkBWBWS1jA" alt="RMUTP Logo" class="h-full w-auto object-contain">
+      </div>
+      <span class="uppercase tracking-widest text-on-surface">© 2024 RMUTP Martial Arts Club</span>
+    </div>
+    <div class="flex gap-6 uppercase tracking-wider">
+      <a href="#" class="hover:text-primary transition-colors">Privacy Policy</a>
+      <a href="#" class="hover:text-primary transition-colors">Terms of Service</a>
+      <a href="#" class="hover:text-primary transition-colors">Contact Us</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
